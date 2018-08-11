@@ -26,8 +26,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="4"
-     inkscape:cx="74.761284"
-     inkscape:cy="559.15711"
+     inkscape:cx="313.58791"
+     inkscape:cy="693.46732"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -44,7 +44,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -298,7 +298,10 @@
        height="23.573172"
        x="9.822154"
        y="140.21968"
-       ry="0" />
+       ry="0"
+       inkscape:export-filename="/home/nforrer/src/ludumdare/ld42/environment/space.png"
+       inkscape:export-xdpi="68.959747"
+       inkscape:export-ydpi="68.959747" />
     <path
        sodipodi:type="star"
        style="opacity:0.5;fill:#ffff00;fill-opacity:1;fill-rule:nonzero;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none"
@@ -315,7 +318,10 @@
        inkscape:randomized="0"
        d="m 12.303125,161.66563 -0.254756,-0.11919 -0.242609,0.14229 0.03463,-0.27911 -0.210298,-0.18677 0.276158,-0.0533 0.112637,-0.25772 0.136045,0.24616 0.279913,0.0275 -0.192078,0.20545 z"
        inkscape:transform-center-x="0.0060737837"
-       inkscape:transform-center-y="-0.034626563" />
+       inkscape:transform-center-y="-0.034626563"
+       inkscape:export-filename="/home/nforrer/src/ludumdare/ld42/environment/space.png"
+       inkscape:export-xdpi="68.959747"
+       inkscape:export-ydpi="68.959747" />
     <path
        sodipodi:type="star"
        style="opacity:0.5;fill:#ffff00;fill-opacity:1;fill-rule:nonzero;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none"
@@ -332,7 +338,10 @@
        inkscape:randomized="0"
        d="m 20.174479,160.07813 -0.591349,0.38981 -0.01412,0.70813 -0.553473,-0.44194 -0.677837,0.20539 0.249283,-0.66296 -0.404802,-0.58119 0.707539,0.0322 0.427656,-0.56459 0.187999,0.68287 z"
        inkscape:transform-center-x="-0.062182054"
-       inkscape:transform-center-y="-0.040882391" />
+       inkscape:transform-center-y="-0.040882391"
+       inkscape:export-filename="/home/nforrer/src/ludumdare/ld42/environment/space.png"
+       inkscape:export-xdpi="68.959747"
+       inkscape:export-ydpi="68.959747" />
     <path
        sodipodi:type="star"
        style="opacity:0.5;fill:#ffff00;fill-opacity:1;fill-rule:nonzero;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none"
@@ -349,7 +358,10 @@
        inkscape:randomized="0"
        d="m 24.077083,154.45574 0.01893,0.1376 0.124089,0.0624 -0.125023,0.0605 -0.02102,0.1373 -0.0962,-0.1002 -0.137079,0.0224 0.06557,-0.12245 -0.0637,-0.12343 0.136722,0.0245 z"
        inkscape:transform-center-x="-0.01950656"
-       inkscape:transform-center-y="0.00048872917" />
+       inkscape:transform-center-y="0.00048872917"
+       inkscape:export-filename="/home/nforrer/src/ludumdare/ld42/environment/space.png"
+       inkscape:export-xdpi="68.959747"
+       inkscape:export-ydpi="68.959747" />
     <path
        sodipodi:type="star"
        style="opacity:0.5;fill:#ffff00;fill-opacity:1;fill-rule:nonzero;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none"
@@ -366,7 +378,10 @@
        inkscape:randomized="0"
        d="m 19.976042,152.00834 0.667579,0.0624 0.429861,-0.51456 0.14695,0.65418 0.622212,0.24982 -0.576759,0.34191 -0.04531,0.66895 -0.503406,-0.44287 -0.650217,0.16362 0.265636,-0.61562 z"
        inkscape:transform-center-x="-0.073405173"
-       inkscape:transform-center-y="-0.023897978" />
+       inkscape:transform-center-y="-0.023897978"
+       inkscape:export-filename="/home/nforrer/src/ludumdare/ld42/environment/space.png"
+       inkscape:export-xdpi="68.959747"
+       inkscape:export-ydpi="68.959747" />
     <path
        sodipodi:type="star"
        style="opacity:0.5;fill:#ffff00;fill-opacity:1;fill-rule:nonzero;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none"
@@ -383,7 +398,10 @@
        inkscape:randomized="0"
        d="m 15.941146,148.23803 -0.215877,-0.0404 -0.155671,0.15492 -0.02828,-0.2178 -0.195448,-0.10017 0.1984,-0.0942 0.03488,-0.21684 0.150896,0.15958 0.217003,-0.0338 -0.10514,0.19283 z"
        inkscape:transform-center-x="0.03010271"
-       inkscape:transform-center-y="-0.0015534791" />
+       inkscape:transform-center-y="-0.0015534791"
+       inkscape:export-filename="/home/nforrer/src/ludumdare/ld42/environment/space.png"
+       inkscape:export-xdpi="68.959747"
+       inkscape:export-ydpi="68.959747" />
     <path
        sodipodi:type="star"
        style="opacity:0.5;fill:#ffff00;fill-opacity:1;fill-rule:nonzero;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none"
@@ -400,7 +418,10 @@
        inkscape:randomized="0"
        d="m 23.283333,146.98126 -0.412823,0.0568 -0.187253,0.37227 -0.18158,-0.37507 -0.411913,-0.0631 0.3006,-0.2886 -0.06732,-0.41123 0.367362,0.1967 0.370305,-0.1911 -0.07356,0.41016 z"
        inkscape:transform-center-x="0.0014723185"
-       inkscape:transform-center-y="0.058518737" />
+       inkscape:transform-center-y="0.058518737"
+       inkscape:export-filename="/home/nforrer/src/ludumdare/ld42/environment/space.png"
+       inkscape:export-xdpi="68.959747"
+       inkscape:export-ydpi="68.959747" />
     <path
        sodipodi:type="star"
        style="opacity:0.5;fill:#ffff00;fill-opacity:1;fill-rule:nonzero;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none"
@@ -417,7 +438,10 @@
        inkscape:randomized="0"
        d="m 29.170311,151.14844 -0.744318,-0.41639 -0.764979,0.37709 0.166005,-0.83656 -0.595029,-0.61101 0.846915,-0.10063 0.397231,-0.75472 0.357417,0.77437 0.840531,0.14456 -0.626019,0.57922 z"
        inkscape:transform-center-x="-0.010329644"
-       inkscape:transform-center-y="-0.11277755" />
+       inkscape:transform-center-y="-0.11277755"
+       inkscape:export-filename="/home/nforrer/src/ludumdare/ld42/environment/space.png"
+       inkscape:export-xdpi="68.959747"
+       inkscape:export-ydpi="68.959747" />
     <path
        sodipodi:type="star"
        style="opacity:0.5;fill:#ffff00;fill-opacity:1;fill-rule:nonzero;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none"
@@ -434,7 +458,10 @@
        inkscape:randomized="0"
        d="m 30.823957,157.69687 -0.253736,-0.31562 -0.403851,0.0301 0.221768,-0.33885 -0.153414,-0.37479 0.390796,0.10621 0.309035,-0.26172 0.01976,0.40448 0.344409,0.21304 -0.378585,0.14378 z"
        inkscape:transform-center-x="-0.040879986"
-       inkscape:transform-center-y="0.01796576" />
+       inkscape:transform-center-y="0.01796576"
+       inkscape:export-filename="/home/nforrer/src/ludumdare/ld42/environment/space.png"
+       inkscape:export-xdpi="68.959747"
+       inkscape:export-ydpi="68.959747" />
     <path
        sodipodi:type="star"
        style="opacity:0.5;fill:#ffff00;fill-opacity:1;fill-rule:nonzero;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none"
@@ -451,7 +478,10 @@
        inkscape:randomized="0"
        d="m 11.310937,141.88802 0.198476,-0.39185 -0.210281,-0.38565 0.434008,0.0677 0.301792,-0.31917 0.06976,0.43368 0.396799,0.1884 -0.390896,0.20035 -0.05656,0.4356 -0.311343,-0.30985 z"
        inkscape:transform-center-x="-0.060204875"
-       inkscape:transform-center-y="-0.0031050106" />
+       inkscape:transform-center-y="-0.0031050106"
+       inkscape:export-filename="/home/nforrer/src/ludumdare/ld42/environment/space.png"
+       inkscape:export-xdpi="68.959747"
+       inkscape:export-ydpi="68.959747" />
     <path
        sodipodi:type="star"
        style="opacity:0.5;fill:#ffff00;fill-opacity:1;fill-rule:nonzero;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none"
@@ -468,7 +498,10 @@
        inkscape:randomized="0"
        d="m 17.859375,142.48334 -0.157557,0.0778 -0.02527,0.17387 -0.122641,-0.12582 -0.173172,0.0297 0.08176,-0.15552 -0.08176,-0.15552 0.173172,0.0297 0.122641,-0.12582 0.02527,0.17388 z"
        inkscape:transform-center-x="-0.025265238"
-       inkscape:transform-center-y="-1.7950656e-06" />
+       inkscape:transform-center-y="-1.7950656e-06"
+       inkscape:export-filename="/home/nforrer/src/ludumdare/ld42/environment/space.png"
+       inkscape:export-xdpi="68.959747"
+       inkscape:export-ydpi="68.959747" />
     <path
        sodipodi:type="star"
        style="opacity:0.5;fill:#ffff00;fill-opacity:1;fill-rule:nonzero;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none"
@@ -485,7 +518,10 @@
        inkscape:randomized="0"
        d="m 24.672397,142.21875 -1.259948,0.52385 -0.282744,1.3349 -0.887561,-1.0364 -1.356933,0.1436 0.711404,-1.16439 -0.555886,-1.24615 1.327232,0.31678 1.013377,-0.91376 0.10887,1.36016 z"
        inkscape:transform-center-x="-0.15692748"
-       inkscape:transform-center-y="0.040878583" />
+       inkscape:transform-center-y="0.040878583"
+       inkscape:export-filename="/home/nforrer/src/ludumdare/ld42/environment/space.png"
+       inkscape:export-xdpi="68.959747"
+       inkscape:export-ydpi="68.959747" />
     <path
        sodipodi:type="star"
        style="opacity:0.5;fill:#ffff00;fill-opacity:1;fill-rule:nonzero;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none"
@@ -502,7 +538,10 @@
        inkscape:randomized="0"
        d="m 31.220832,143.93855 0.0015,-0.29466 -0.241863,-0.1683 0.280707,-0.0896 0.08533,-0.28204 0.171956,0.23928 0.294598,-0.006 -0.174431,0.23748 0.09674,0.27833 -0.279761,-0.0925 z"
        inkscape:transform-center-x="0.022477662"
-       inkscape:transform-center-y="-0.020422936" />
+       inkscape:transform-center-y="-0.020422936"
+       inkscape:export-filename="/home/nforrer/src/ludumdare/ld42/environment/space.png"
+       inkscape:export-xdpi="68.959747"
+       inkscape:export-ydpi="68.959747" />
     <path
        sodipodi:type="star"
        style="opacity:0.5;fill:#ffff00;fill-opacity:1;fill-rule:nonzero;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none"
@@ -519,7 +558,10 @@
        inkscape:randomized="0"
        d="m 13.163021,153.06667 0.120206,-0.45119 -0.303534,-0.35481 0.466255,-0.0251 0.243649,-0.39833 0.167955,0.43568 0.454117,0.10864 -0.362453,0.29436 0.03701,0.46547 -0.391964,-0.25375 z"
        inkscape:transform-center-x="-0.019639514"
-       inkscape:transform-center-y="-0.048192506" />
+       inkscape:transform-center-y="-0.048192506"
+       inkscape:export-filename="/home/nforrer/src/ludumdare/ld42/environment/space.png"
+       inkscape:export-xdpi="68.959747"
+       inkscape:export-ydpi="68.959747" />
     <path
        sodipodi:type="star"
        style="opacity:0.5;fill:#ffff00;fill-opacity:1;fill-rule:nonzero;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none"
@@ -536,6 +578,326 @@
        inkscape:randomized="0"
        d="m 25.929165,159.7474 -1.041522,0.0732 -0.530178,0.89946 -0.391438,-0.96793 -1.019274,-0.22628 0.7996,-0.67139 -0.09977,-1.03931 0.885618,0.55299 0.957614,-0.41605 -0.252258,1.01316 z"
        inkscape:transform-center-x="0.035998231"
-       inkscape:transform-center-y="0.11548755" />
+       inkscape:transform-center-y="0.11548755"
+       inkscape:export-filename="/home/nforrer/src/ludumdare/ld42/environment/space.png"
+       inkscape:export-xdpi="68.959747"
+       inkscape:export-ydpi="68.959747" />
+    <g
+       id="g1572">
+      <g
+         id="g1551"
+         transform="translate(37.107812,-0.46302083)"
+         inkscape:export-filename="/home/nforrer/src/ludumdare/ld42/environment/wall.png"
+         inkscape:export-xdpi="96"
+         inkscape:export-ydpi="96">
+        <rect
+           inkscape:export-ydpi="96"
+           inkscape:export-xdpi="96"
+           inkscape:export-filename="/home/nforrer/src/ludumdare/ld42/environment/floor_tiles.png"
+           style="opacity:1;fill:#483e37;fill-opacity:1;fill-rule:nonzero;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none"
+           id="rect1531"
+           width="16.933332"
+           height="16.933332"
+           x="30.823957"
+           y="111.1302"
+           ry="0" />
+        <rect
+           inkscape:export-ydpi="96"
+           inkscape:export-xdpi="96"
+           inkscape:export-filename="/home/nforrer/src/ludumdare/ld42/environment/floor_tiles.png"
+           style="opacity:0.5;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none"
+           id="rect1533"
+           width="1.8241144"
+           height="1.403165"
+           x="103.32263"
+           y="65.746735"
+           ry="0.31571212"
+           transform="rotate(41.130365)" />
+        <rect
+           inkscape:export-ydpi="96"
+           inkscape:export-xdpi="96"
+           inkscape:export-filename="/home/nforrer/src/ludumdare/ld42/environment/floor_tiles.png"
+           transform="rotate(-46.129422)"
+           ry="0.31571212"
+           y="107.70058"
+           x="-58.670414"
+           height="1.403165"
+           width="1.8241144"
+           id="rect1535"
+           style="opacity:0.5;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none" />
+        <rect
+           inkscape:export-ydpi="96"
+           inkscape:export-xdpi="96"
+           inkscape:export-filename="/home/nforrer/src/ludumdare/ld42/environment/floor_tiles.png"
+           style="opacity:0.5;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none"
+           id="rect1537"
+           width="1.8241144"
+           height="1.403165"
+           x="-6.0864358"
+           y="127.11308"
+           ry="0.31571212"
+           transform="rotate(-21.837283)" />
+        <rect
+           inkscape:export-ydpi="96"
+           inkscape:export-xdpi="96"
+           inkscape:export-filename="/home/nforrer/src/ludumdare/ld42/environment/floor_tiles.png"
+           transform="rotate(61.113692)"
+           ry="0.31571212"
+           y="15.661674"
+           x="120.07693"
+           height="1.403165"
+           width="1.8241144"
+           id="rect1539"
+           style="opacity:0.5;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none" />
+        <rect
+           inkscape:export-ydpi="96"
+           inkscape:export-xdpi="96"
+           inkscape:export-filename="/home/nforrer/src/ludumdare/ld42/environment/floor_tiles.png"
+           style="opacity:0.5;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none"
+           id="rect1541"
+           width="1.8241144"
+           height="1.403165"
+           x="102.53201"
+           y="-74.37355"
+           ry="0.31571212"
+           transform="rotate(110.271)" />
+        <rect
+           inkscape:export-ydpi="96"
+           inkscape:export-xdpi="96"
+           inkscape:export-filename="/home/nforrer/src/ludumdare/ld42/environment/floor_tiles.png"
+           transform="rotate(-121.64485)"
+           ry="0.31571212"
+           y="-32.888409"
+           x="-128.36946"
+           height="1.403165"
+           width="1.8241144"
+           id="rect1543"
+           style="opacity:0.5;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none" />
+        <rect
+           inkscape:export-ydpi="96"
+           inkscape:export-xdpi="96"
+           inkscape:export-filename="/home/nforrer/src/ludumdare/ld42/environment/floor_tiles.png"
+           style="opacity:0.5;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none"
+           id="rect1545"
+           width="1.8241144"
+           height="1.403165"
+           x="-16.177324"
+           y="131.99332"
+           ry="0.31571212"
+           transform="rotate(-26.243637)" />
+        <rect
+           inkscape:export-ydpi="96"
+           inkscape:export-xdpi="96"
+           inkscape:export-filename="/home/nforrer/src/ludumdare/ld42/environment/floor_tiles.png"
+           transform="rotate(-26.243637)"
+           ry="0.31571212"
+           y="119.19024"
+           x="-14.84104"
+           height="1.403165"
+           width="1.8241144"
+           id="rect1547"
+           style="opacity:0.5;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none" />
+        <rect
+           inkscape:export-ydpi="96"
+           inkscape:export-xdpi="96"
+           inkscape:export-filename="/home/nforrer/src/ludumdare/ld42/environment/floor_tiles.png"
+           transform="rotate(41.130365)"
+           ry="0.31571212"
+           y="62.937851"
+           x="97.48867"
+           height="1.403165"
+           width="1.8241144"
+           id="rect1549"
+           style="opacity:0.5;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none" />
+      </g>
+      <rect
+         inkscape:export-ydpi="96"
+         inkscape:export-xdpi="96"
+         inkscape:export-filename="/home/nforrer/src/ludumdare/ld42/environment/wall.png"
+         y="110.66718"
+         x="67.93177"
+         height="8.4666719"
+         width="16.867188"
+         id="rect1555"
+         style="opacity:1;fill:#241c1c;fill-opacity:1;fill-rule:nonzero;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none" />
+      <rect
+         inkscape:export-ydpi="96"
+         inkscape:export-xdpi="96"
+         inkscape:export-filename="/home/nforrer/src/ludumdare/ld42/environment/wall.png"
+         y="119.13385"
+         x="67.93177"
+         height="0.72760051"
+         width="16.900261"
+         id="rect1557"
+         style="opacity:0.5;fill:#1a1a1a;fill-opacity:1;fill-rule:nonzero;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none" />
+    </g>
+    <g
+       id="g1594"
+       transform="translate(57.406933,-0.27593216)"
+       inkscape:export-filename="/home/nforrer/src/ludumdare/ld42/environment/wall.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96">
+      <rect
+         inkscape:export-ydpi="96"
+         inkscape:export-xdpi="96"
+         inkscape:export-filename="/home/nforrer/src/ludumdare/ld42/environment/floor_tiles.png"
+         style="opacity:1;fill:#483e37;fill-opacity:1;fill-rule:nonzero;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none"
+         id="rect1574"
+         width="16.933332"
+         height="16.933332"
+         x="30.823957"
+         y="111.1302"
+         ry="0" />
+      <rect
+         inkscape:export-ydpi="96"
+         inkscape:export-xdpi="96"
+         inkscape:export-filename="/home/nforrer/src/ludumdare/ld42/environment/floor_tiles.png"
+         style="opacity:0.5;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none"
+         id="rect1576"
+         width="1.8241144"
+         height="1.403165"
+         x="103.32263"
+         y="65.746735"
+         ry="0.31571212"
+         transform="rotate(41.130365)" />
+      <rect
+         inkscape:export-ydpi="96"
+         inkscape:export-xdpi="96"
+         inkscape:export-filename="/home/nforrer/src/ludumdare/ld42/environment/floor_tiles.png"
+         transform="rotate(-46.129422)"
+         ry="0.31571212"
+         y="107.70058"
+         x="-58.670414"
+         height="1.403165"
+         width="1.8241144"
+         id="rect1578"
+         style="opacity:0.5;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none" />
+      <rect
+         inkscape:export-ydpi="96"
+         inkscape:export-xdpi="96"
+         inkscape:export-filename="/home/nforrer/src/ludumdare/ld42/environment/floor_tiles.png"
+         style="opacity:0.5;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none"
+         id="rect1580"
+         width="1.8241144"
+         height="1.403165"
+         x="-6.0864358"
+         y="127.11308"
+         ry="0.31571212"
+         transform="rotate(-21.837283)" />
+      <rect
+         inkscape:export-ydpi="96"
+         inkscape:export-xdpi="96"
+         inkscape:export-filename="/home/nforrer/src/ludumdare/ld42/environment/floor_tiles.png"
+         transform="rotate(61.113692)"
+         ry="0.31571212"
+         y="15.661674"
+         x="120.07693"
+         height="1.403165"
+         width="1.8241144"
+         id="rect1582"
+         style="opacity:0.5;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none" />
+      <rect
+         inkscape:export-ydpi="96"
+         inkscape:export-xdpi="96"
+         inkscape:export-filename="/home/nforrer/src/ludumdare/ld42/environment/floor_tiles.png"
+         style="opacity:0.5;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none"
+         id="rect1584"
+         width="1.8241144"
+         height="1.403165"
+         x="102.53201"
+         y="-74.37355"
+         ry="0.31571212"
+         transform="rotate(110.271)" />
+      <rect
+         inkscape:export-ydpi="96"
+         inkscape:export-xdpi="96"
+         inkscape:export-filename="/home/nforrer/src/ludumdare/ld42/environment/floor_tiles.png"
+         transform="rotate(-121.64485)"
+         ry="0.31571212"
+         y="-32.888409"
+         x="-128.36946"
+         height="1.403165"
+         width="1.8241144"
+         id="rect1586"
+         style="opacity:0.5;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none" />
+      <rect
+         inkscape:export-ydpi="96"
+         inkscape:export-xdpi="96"
+         inkscape:export-filename="/home/nforrer/src/ludumdare/ld42/environment/floor_tiles.png"
+         style="opacity:0.5;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none"
+         id="rect1588"
+         width="1.8241144"
+         height="1.403165"
+         x="-16.177324"
+         y="131.99332"
+         ry="0.31571212"
+         transform="rotate(-26.243637)" />
+      <rect
+         inkscape:export-ydpi="96"
+         inkscape:export-xdpi="96"
+         inkscape:export-filename="/home/nforrer/src/ludumdare/ld42/environment/floor_tiles.png"
+         transform="rotate(-26.243637)"
+         ry="0.31571212"
+         y="119.19024"
+         x="-14.84104"
+         height="1.403165"
+         width="1.8241144"
+         id="rect1590"
+         style="opacity:0.5;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none" />
+      <rect
+         inkscape:export-ydpi="96"
+         inkscape:export-xdpi="96"
+         inkscape:export-filename="/home/nforrer/src/ludumdare/ld42/environment/floor_tiles.png"
+         transform="rotate(41.130365)"
+         ry="0.31571212"
+         y="62.937851"
+         x="97.48867"
+         height="1.403165"
+         width="1.8241144"
+         id="rect1592"
+         style="opacity:0.5;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none" />
+    </g>
+    <rect
+       inkscape:export-ydpi="96"
+       inkscape:export-xdpi="96"
+       inkscape:export-filename="/home/nforrer/src/ludumdare/ld42/environment/wall.png"
+       y="110.85427"
+       x="88.230888"
+       height="8.4666719"
+       width="16.883724"
+       id="rect1596"
+       style="opacity:1;fill:#241c1c;fill-opacity:1;fill-rule:nonzero;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none" />
+    <rect
+       inkscape:export-ydpi="96"
+       inkscape:export-xdpi="96"
+       inkscape:export-filename="/home/nforrer/src/ludumdare/ld42/environment/wall.png"
+       y="119.32094"
+       x="88.230888"
+       height="0.72760051"
+       width="16.900261"
+       id="rect1598"
+       style="opacity:0.5;fill:#1a1a1a;fill-opacity:1;fill-rule:nonzero;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none" />
+    <rect
+       style="opacity:1;fill:#241c1c;fill-opacity:1;fill-rule:nonzero;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none"
+       id="rect1615"
+       width="8.5888186"
+       height="8.4666061"
+       x="119.43601"
+       y="-104.05777"
+       inkscape:export-filename="/home/nforrer/src/ludumdare/ld42/environment/wall.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"
+       transform="matrix(0.00898946,0.99995959,-0.99999728,0.00233081,0,0)" />
+    <rect
+       style="opacity:0.5;fill:#1a1a1a;fill-opacity:1;fill-rule:nonzero;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none"
+       id="rect1617"
+       width="7.7564855"
+       height="0.66462493"
+       x="120.7468"
+       y="-96.182625"
+       inkscape:export-filename="/home/nforrer/src/ludumdare/ld42/environment/wall.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"
+       transform="matrix(0.00413651,0.99999144,-0.9999729,0.00736247,0,0)" />
   </g>
 </svg>

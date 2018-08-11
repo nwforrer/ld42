@@ -5,7 +5,7 @@ enum STATES {IDLE, WALK, ACTION, JUMP, FALLING, DEAD}
 func _ready():
 	pass
 
-func _on_Player_state_changed(new_state):
+func _on_Entity_state_changed(new_state):
 	$StateLabel.text = ''
 	
 	match new_state:
@@ -21,3 +21,6 @@ func _on_Player_state_changed(new_state):
 			$StateLabel.text = 'FALLING'
 		DEAD:
 			$StateLabel.text = 'DEAD'
+		_:
+			
+			$StateLabel.text = 'UNKNOWN'

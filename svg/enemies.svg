@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg8"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)"
+   sodipodi:docname="enemies.svg">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.4"
+     inkscape:cx="391.66821"
+     inkscape:cy="774.14115"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1021"
+     inkscape:window-x="0"
+     inkscape:window-y="31"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       id="g847"
+       inkscape:export-filename="/home/nforrer/src/ludumdare/ld42/entities/enemies/enemy.png"
+       inkscape:export-xdpi="30.075521"
+       inkscape:export-ydpi="30.075521">
+      <path
+         sodipodi:nodetypes="sssss"
+         inkscape:connector-curvature="0"
+         id="path815"
+         d="m 122.46429,91.947914 c 0,14.925656 -10.96571,13.040176 -25.891373,13.040176 -14.92566,0 -28.159226,1.88548 -28.159228,-13.040176 0,-14.92566 12.099639,-27.025299 27.025299,-27.025299 14.925662,-2e-6 27.025302,12.099637 27.025302,27.025299 z"
+         style="opacity:1;fill:#008000;fill-opacity:1;fill-rule:nonzero;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none" />
+      <ellipse
+         ry="3.5907736"
+         rx="3.7797618"
+         cy="80.986603"
+         cx="82.776794"
+         id="path818"
+         style="opacity:0.5;fill:#00ff00;fill-opacity:1;fill-rule:nonzero;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none" />
+      <ellipse
+         style="opacity:0.5;fill:#00ff00;fill-opacity:1;fill-rule:nonzero;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none"
+         id="ellipse820"
+         cx="105.83334"
+         cy="75.505951"
+         rx="3.7797618"
+         ry="3.5907736" />
+      <ellipse
+         style="opacity:0.5;fill:#00ff00;fill-opacity:1;fill-rule:nonzero;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none"
+         id="ellipse822"
+         cx="92.793167"
+         cy="69.458328"
+         rx="3.7797618"
+         ry="3.5907736" />
+    </g>
+  </g>
+</svg>

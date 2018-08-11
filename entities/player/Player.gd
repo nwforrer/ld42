@@ -27,7 +27,7 @@ var velocity = Vector2()
 var air_speed = 0.0
 var air_velocity = 0.0
 
-var state = IDLE
+var state
 
 func process_input():
 	if state in [FALLING]:
@@ -66,9 +66,13 @@ func process_input():
 	if move_velocity.y == 0 or (velocity.y < 0 and move_velocity.y > 0) or (velocity.y > 0 and move_velocity.y < 0):
 		velocity.y = 0
 
-func _ready():
+func reset(position):
 	_change_state(IDLE)
+	global_position = position
+
+func _ready():
 	$Tween.connect('tween_completed', self, '_on_Tween_tween_completed')
+	reset(Vector2(100,100))
 
 func _change_state(new_state):
 	if new_state == state:

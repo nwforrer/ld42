@@ -4,11 +4,11 @@
 [ext_resource path="res://entities/player/head.png" type="Texture" id=2]
 [ext_resource path="res://entities/player/body.png" type="Texture" id=3]
 [ext_resource path="res://entities/player/hand.png" type="Texture" id=4]
-[ext_resource path="res://entities/player/shadow.png" type="Texture" id=5]
+[ext_resource path="res://entities/shadow.png" type="Texture" id=5]
 [ext_resource path="res://abilities/FireSpellAbility.tscn" type="PackedScene" id=6]
 [ext_resource path="res://interface/DebugInfo.tscn" type="PackedScene" id=7]
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=1]
 
 resource_name = "falling"
 length = 0.5
@@ -39,9 +39,8 @@ tracks/1/keys = {
 "values": [ Vector2( 1e-05, 1e-05 ) ]
 }
 
-[sub_resource type="Animation" id=1]
+[sub_resource type="Animation" id=2]
 
-resource_name = "idle"
 length = 2.0
 loop = true
 step = 0.01
@@ -118,7 +117,7 @@ tracks/5/keys = {
 "values": [ Vector2( 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=3]
 
 resource_name = "jump"
 length = 0.2
@@ -149,9 +148,8 @@ tracks/1/keys = {
 "values": [ Vector2( 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=4]
 
-resource_name = "reset"
 length = 1.0
 loop = false
 step = 0.1
@@ -408,9 +406,8 @@ tracks/20/keys = {
 "values": [ Vector2( 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=5]
 
-resource_name = "walk"
 length = 0.5
 loop = true
 step = 0.05
@@ -475,14 +472,14 @@ tracks/4/keys = {
 "values": [ Vector2( 1, 1 ) ]
 }
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=6]
 
 custom_solver_bias = 0.0
-extents = Vector2( 21.3779, 5.43906 )
+extents = Vector2( 31.1739, 5.43906 )
 
-[node name="Player" type="KinematicBody2D" index="0"]
+[node name="Player" type="KinematicBody2D"]
 
-position = Vector2( 1.43396, -3.05176e-05 )
+position = Vector2( 0.71698, 11.83 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -496,11 +493,11 @@ autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/falling = SubResource( 6 )
-anims/idle = SubResource( 1 )
-anims/jump = SubResource( 5 )
-anims/reset = SubResource( 2 )
-anims/walk = SubResource( 3 )
+anims/falling = SubResource( 1 )
+anims/idle = SubResource( 2 )
+anims/jump = SubResource( 3 )
+anims/reset = SubResource( 4 )
+anims/walk = SubResource( 5 )
 blend_times = [  ]
 _sections_unfolded = [ "Playback Options" ]
 
@@ -537,14 +534,14 @@ texture = ExtResource( 4 )
 
 modulate = Color( 1, 1, 1, 0.552471 )
 show_behind_parent = true
-position = Vector2( -11.2045, 18.8245 )
+position = Vector2( -10.2756, 13.6944 )
 texture = ExtResource( 5 )
 _sections_unfolded = [ "Material", "Transform", "Visibility" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="4"]
 
-position = Vector2( -13.312, 6.4492 )
-shape = SubResource( 4 )
+position = Vector2( -10.5059, 9.27049 )
+shape = SubResource( 6 )
 
 [node name="FireSpellAbility" parent="." index="5" instance=ExtResource( 6 )]
 
@@ -568,7 +565,7 @@ margin_top = -157.0
 margin_right = 1.0
 margin_bottom = -117.0
 
-[connection signal="state_changed" from="." to="DebugInfo" method="_on_Player_state_changed"]
+[connection signal="state_changed" from="." to="DebugInfo" method="_on_Entity_state_changed"]
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 

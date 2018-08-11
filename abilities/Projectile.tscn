@@ -97,7 +97,7 @@ _sections_unfolded = [ "Drawing", "Process Material", "Time" ]
 [node name="LifeTimer" type="Timer" parent="." index="2"]
 
 process_mode = 1
-wait_time = 10.0
+wait_time = 5.0
 one_shot = false
 autostart = false
 
