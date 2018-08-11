@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://rock.png" type="Texture" id=1]
+
+[node name="Rock" type="StaticBody2D"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -13.3582, -24.2891, -21.6878, -17.703, -28.4677, -14.991, -30.5985, -9.56708, -27.4991, 3.79902, -28.8551, 19.1022, -24.5935, 22.9765, -12.3896, 24.1387, 10.4683, 23.7513, 21.7036, 19.1022, 28.8709, 8.25438, 30.0332, -2.98088, 11.8243, -18.6715, 7.17522, -23.3206 )
+
+[node name="Sprite" type="Sprite" parent="." index="1"]
+
+texture = ExtResource( 1 )
+
+
