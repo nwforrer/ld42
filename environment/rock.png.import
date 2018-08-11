@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/ui_ability_bg.png-332334130de352f276468d7c45a86b0d.stex"
+path="res://.import/rock.png-7b233edea0cdf71b130fc447a4f10124.stex"
 
 [deps]
 
-source_file="res://ui_ability_bg.png"
-dest_files=[ "res://.import/ui_ability_bg.png-332334130de352f276468d7c45a86b0d.stex" ]
+source_file="res://environment/rock.png"
+dest_files=[ "res://.import/rock.png-7b233edea0cdf71b130fc447a4f10124.stex" ]
 
 [params]
 

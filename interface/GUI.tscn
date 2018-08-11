@@ -1,7 +1,9 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://ui_ability_bg.png" type="Texture" id=1]
-[ext_resource path="res://fire_spell.png" type="Texture" id=2]
+[ext_resource path="res://interface/ui_ability_bg.png" type="Texture" id=1]
+[ext_resource path="res://abilities/fire_spell.png" type="Texture" id=2]
+
+
 
 [node name="GUI" type="Control"]
 

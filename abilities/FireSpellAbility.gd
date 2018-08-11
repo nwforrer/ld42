@@ -1,4 +1,4 @@
-extends "res://Ability.gd"
+extends "res://abilities/Ability.gd"
 
 func _ready():
 	can_damage = true

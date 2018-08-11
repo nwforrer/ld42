@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/fire_spell.png-238dc930ab68690a5003ad78fb33af1f.stex"
+path="res://.import/door.png-bf147d3c309d1c25c45c9b98f295f3e3.stex"
 
 [deps]
 
-source_file="res://fire_spell.png"
-dest_files=[ "res://.import/fire_spell.png-238dc930ab68690a5003ad78fb33af1f.stex" ]
+source_file="res://environment/door.png"
+dest_files=[ "res://.import/door.png-bf147d3c309d1c25c45c9b98f295f3e3.stex" ]
 
 [params]
 

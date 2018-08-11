@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/shadow.png-6f5bf7fc1c5677964f016f99cc813ae7.stex"
+path="res://.import/fire_spell.png-26eaa47c59ce7d0f249495c58023fc48.stex"
 
 [deps]
 
-source_file="res://shadow.png"
-dest_files=[ "res://.import/shadow.png-6f5bf7fc1c5677964f016f99cc813ae7.stex" ]
+source_file="res://abilities/fire_spell.png"
+dest_files=[ "res://.import/fire_spell.png-26eaa47c59ce7d0f249495c58023fc48.stex" ]
 
 [params]
 

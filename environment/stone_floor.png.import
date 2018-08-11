@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/stone_floor.png-10b254ded34182cdf1288384f84a60b6.stex"
+path="res://.import/stone_floor.png-2d554b78c969a2b439d3ffcbeea9c219.stex"
 
 [deps]
 
-source_file="res://stone_floor.png"
-dest_files=[ "res://.import/stone_floor.png-10b254ded34182cdf1288384f84a60b6.stex" ]
+source_file="res://environment/stone_floor.png"
+dest_files=[ "res://.import/stone_floor.png-2d554b78c969a2b439d3ffcbeea9c219.stex" ]
 
 [params]
 
