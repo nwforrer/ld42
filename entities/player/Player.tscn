@@ -477,7 +477,7 @@ tracks/4/keys = {
 custom_solver_bias = 0.0
 extents = Vector2( 31.1739, 5.43906 )
 
-[node name="Player" type="KinematicBody2D" index="0"]
+[node name="Player" type="KinematicBody2D"]
 
 input_pickable = false
 collision_layer = 4
@@ -510,7 +510,14 @@ playback/active = false
 playback/repeat = false
 playback/speed = 1.0
 
-[node name="Pivot" type="Position2D" parent="." index="2"]
+[node name="BackRayCast" type="RayCast2D" parent="." index="2"]
+
+enabled = true
+exclude_parent = true
+cast_to = Vector2( -90, 0 )
+collision_mask = 1
+
+[node name="Pivot" type="Position2D" parent="." index="3"]
 
 _sections_unfolded = [ "Transform", "Visibility" ]
 
@@ -535,7 +542,7 @@ texture = ExtResource( 4 )
 
 position = Vector2( 40.4883, -31.1453 )
 
-[node name="Shadow" type="Sprite" parent="." index="3"]
+[node name="Shadow" type="Sprite" parent="." index="4"]
 
 modulate = Color( 1, 1, 1, 0.552471 )
 show_behind_parent = true
@@ -544,23 +551,23 @@ scale = Vector2( 0.931658, 0.931658 )
 texture = ExtResource( 5 )
 _sections_unfolded = [ "Material", "Transform", "Visibility" ]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="4"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="5"]
 
 position = Vector2( -1.44696, 6.03515 )
 shape = SubResource( 6 )
 
-[node name="FireSpellAbility" parent="." index="5" instance=ExtResource( 6 )]
+[node name="FireSpellAbility" parent="." index="6" instance=ExtResource( 6 )]
 
 visible = false
 
-[node name="ActionTimer" type="Timer" parent="." index="6"]
+[node name="ActionTimer" type="Timer" parent="." index="7"]
 
 process_mode = 1
 wait_time = 0.5
 one_shot = false
 autostart = false
 
-[node name="DebugInfo" parent="." index="7" instance=ExtResource( 7 )]
+[node name="DebugInfo" parent="." index="8" instance=ExtResource( 7 )]
 
 margin_left = -39.0
 margin_top = -157.0

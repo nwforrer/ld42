@@ -10,11 +10,14 @@ const MAX_SPEED = 150
 const ACCELERATION = 10
 
 const BUMP_DURATION = 0.2
+const MIN_BUMP_DISTANCE = 10
 const BUMP_DISTANCE = 80
 const MAX_BUMP_HEIGHT = 50
 
 const JUMP_DURATION = 0.8
 const MAX_JUMP_HEIGHT = 80
+
+const RAY_CAST_LENGTH = 90
 
 onready var primary_action = $FireSpellAbility
 onready var secondary_action = $FireSpellAbility
@@ -29,7 +32,7 @@ var velocity = Vector2()
 var air_speed = 0.0
 var air_velocity = 0.0
 
-var facing = Vector2(1, 0)
+var facing = Vector2(1, 0) setget set_facing
 
 var state
 
@@ -37,7 +40,7 @@ func _input(event):
 	if event is InputEventMouseMotion:
 		var map_pos = global_position - camera.position
 		var mouse_dist = event.position - map_pos
-		facing = Vector2(mouse_dist.x, 0) if abs(mouse_dist.x) > abs(mouse_dist.y) else Vector2(0, mouse_dist.y)
+		self.facing = Vector2(mouse_dist.x, 0) if abs(mouse_dist.x) > abs(mouse_dist.y) else Vector2(0, mouse_dist.y)
 
 func process_input():
 	if state in [FALLING]:
@@ -97,8 +100,8 @@ func _change_state(new_state):
 			$AnimationPlayer.play("walk")
 		ACTION:
 			$AnimationPlayer.stop()
-			
-			$Tween.interpolate_property(self, 'position', position, position + BUMP_DISTANCE * -facing.normalized(), BUMP_DURATION, Tween.TRANS_LINEAR, Tween.EASE_IN)
+			var bump_dist = BUMP_DISTANCE if not $BackRayCast.is_colliding() else MIN_BUMP_DISTANCE
+			$Tween.interpolate_property(self, 'position', position, position + bump_dist * -facing.normalized(), BUMP_DURATION, Tween.TRANS_LINEAR, Tween.EASE_IN)
 			$Tween.interpolate_method(self, '_animate_bump_height', 0, 1, BUMP_DURATION, Tween.TRANS_LINEAR, Tween.EASE_IN)
 			$Tween.start()
 		JUMP:
@@ -156,3 +159,7 @@ func _on_Game_hit_empty_space():
 func _on_AnimationPlayer_animation_finished(anim_name):
 	if state == FALLING:
 		emit_signal('died')
+
+func set_facing(new_facing):
+	facing = new_facing
+	$BackRayCast.cast_to = -facing.normalized() * RAY_CAST_LENGTH
