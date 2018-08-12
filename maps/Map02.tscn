@@ -43,6 +43,10 @@ position = Vector2( 683.105, 465.981 )
 
 position = Vector2( 861.815, 131.945 )
 
+[node name="Position2D5" type="Position2D" parent="EnemySpawns" index="4"]
+
+position = Vector2( 542.863, 277.351 )
+
 [node name="DoorHolder" type="Position2D" parent="." index="2"]
 
 [node name="EnemyHolder" type="Position2D" parent="." index="3"]

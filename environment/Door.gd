@@ -1,5 +1,7 @@
 extends Node2D
 
+onready var door_map = get_parent().get_parent()
+
 func _ready():
 	$Closed.visible = true
 	$Closed/CollisionShape2D.disabled = false
@@ -8,7 +10,10 @@ func _ready():
 	
 	$Open.connect('area_entered', self, '_on_Door_exited')
 	
-func _on_Map_complete():
+func _on_Map_complete(map):
+	if map != door_map:
+		return
+		
 	$Closed.visible = false
 	$Closed/CollisionShape2D.disabled = true
 	$Open.visible = true

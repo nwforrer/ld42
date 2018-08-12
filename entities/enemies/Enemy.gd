@@ -2,8 +2,9 @@ extends KinematicBody2D
 
 signal state_changed
 signal enemy_leap
+signal enemy_smash
 
-enum STATES {IDLE, MOVE, LEAP}
+enum STATES {IDLE, MOVE, LEAP, IN_AIR, SMASH}
 
 const MAX_SPEED = 75
 
@@ -14,6 +15,7 @@ const LEAP_STATE_CHANCE = 50 # percent chance of leaping instead of moving
 
 var state
 
+var smash_pos = Vector2()
 var velocity = Vector2()
 
 func _ready():
@@ -46,7 +48,22 @@ func _change_state(new_state):
 		LEAP:
 			state_time = 0.5
 			
-			emit_signal('enemy_leap', global_position)
+			$CollisionShape2D.disabled = true
+			
+			$AnimationPlayer.play('leap')
+			emit_signal('enemy_leap', self)
+		IN_AIR:
+			state_time = 2
+			
+			position = smash_pos
+			
+			$shadow.scale = Vector2(1, 1)
+		SMASH:
+			state_time = 0.1
+			
+			$CollisionShape2D.disabled = false
+			
+			emit_signal('enemy_smash', global_position)
 	
 	$StateChangeTimer.wait_time = state_time
 	$StateChangeTimer.start()
@@ -62,4 +79,8 @@ func _on_StateChangeTimer_timeout():
 	elif state == MOVE:
 		_change_state(IDLE)
 	elif state == LEAP:
+		_change_state(IN_AIR)
+	elif state == IN_AIR:
+		_change_state(SMASH)
+	elif state == SMASH:
 		_change_state(MOVE)

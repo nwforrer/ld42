@@ -13,6 +13,7 @@ const WALL_TILE_INDICES = [2,3]
 var player_grid_pos = Vector2()
 var cur_enemy_holder
 
+var cell_size = Vector2()
 var map_size = Vector2()
 
 var available_room_files = []
@@ -77,6 +78,7 @@ func spawn_enemies(map):
 		var new_enemy = enemy.instance()
 		new_enemy.position = e.position
 		new_enemy.connect('enemy_leap', self, '_on_Enemy_leap')
+		new_enemy.connect('enemy_smash', self, '_on_Enemy_smash')
 		map.get_node('EnemyHolder').add_child(new_enemy)
 
 func spawn_room():
@@ -94,7 +96,7 @@ func spawn_room():
 	next_room.name = "Map"
 	
 	var tile_map = next_room.get_node('TileMap')
-	var cell_size = tile_map.cell_size
+	cell_size = tile_map.cell_size
 	var num_tiles = tile_map.get_used_rect().size
 	map_size = num_tiles * cell_size
 	
@@ -112,9 +114,10 @@ func spawn_room():
 		connect('map_complete', door, '_on_Map_complete')
 		next_room.get_node('DoorHolder').add_child(door)
 	elif available_room_files.size() > 1:
-		tile_map.set_cell(num_tiles.x-1, 5, GROUND_TILE_INDEX)
 		tile_map.set_cell(0, 5, GROUND_TILE_INDEX)
+		tile_map.set_cell(num_tiles.x-1, 5, GROUND_TILE_INDEX)
 		var door_pos = tile_map.map_to_world(Vector2(num_tiles.x-1, 5))
+		door_pos += Vector2(cell_size.x/2, cell_size.y/2)
 		var door = door_scn.instance()
 		door.position = door_pos
 		connect('map_complete', door, '_on_Map_complete')
@@ -155,22 +158,47 @@ func _on_Ability_spawn_projectile(projectile):
 
 func _on_Projectile_collision(projectile, collider):
 	if cur_enemy_holder.get_child_count() == 1:
-		emit_signal('map_complete')
+		emit_signal('map_complete', placed_rooms[player_grid_pos.x])
 		
 	projectile.queue_free()
 	collider.queue_free()
 
-func _on_Enemy_leap(leap_pos):
-	var leap_grid_pos = Vector2(floor(leap_pos.x/map_size.x), floor(leap_pos.y/map_size.y))
-	var tile_map = placed_rooms[leap_grid_pos.x].get_node('TileMap')
+func _on_Enemy_leap(enemy):
+	var enemy_pos = enemy.position
+	var enemy_grid_pos = Vector2(floor(enemy_pos.x/map_size.x), floor(enemy_pos.y/map_size.y))
+	var tile_map = placed_rooms[enemy_grid_pos.x].get_node('TileMap')
+	if not tile_map:
+		return
+	
+	var smash_pos
+	while true:
+		var mapx = int(map_size.x/cell_size.x)
+		var mapy = int(map_size.y/cell_size.y)
+		smash_pos = Vector2(randi()%mapx, randi()%mapy)
+		var tile_index = tile_map.get_cellv(smash_pos)
+		if not tile_index in WALL_TILE_INDICES:
+			break
+	var new_pos = tile_map.map_to_world(smash_pos) + cell_size/2
+	enemy.smash_pos = new_pos
+
+func _on_Enemy_smash(smash_pos):
+	var smash_grid_pos = Vector2(floor(smash_pos.x/map_size.x), floor(smash_pos.y/map_size.y))
+	var tile_map = placed_rooms[smash_grid_pos.x].get_node('TileMap')
 	if not tile_map:
 		return
 		
-	var leap_map_pos = leap_pos - $Camera2D.position
-	var tile_coord = tile_map.world_to_map(leap_map_pos)
-	var tile_index = tile_map.get_cellv(tile_coord)
-	if not tile_index in WALL_TILE_INDICES:
-		tile_map.set_cellv(tile_coord, EMPTY_TILE_INDEX)
+	var smash_map_pos = smash_pos - $Camera2D.position
+	var tile_coord = tile_map.world_to_map(smash_map_pos)
+	var extra_tile_chance = 30
+	_destroy_tile(tile_map, tile_coord)
+	if (tile_coord.x+1) < map_size.x and randf()*100 < extra_tile_chance:
+		_destroy_tile(tile_map, Vector2(tile_coord.x+1, tile_coord.y))
+	if (tile_coord.x-1) > 0 and randf()*100 < extra_tile_chance:
+		_destroy_tile(tile_map, Vector2(tile_coord.x-1, tile_coord.y))
+	if (tile_coord.y+1) < map_size.y and randf()*100 < extra_tile_chance:
+		_destroy_tile(tile_map, Vector2(tile_coord.x, tile_coord.y+1))
+	if (tile_coord.y-1) > 0 and randf()*100 < extra_tile_chance:
+		_destroy_tile(tile_map, Vector2(tile_coord.x, tile_coord.y-1))
 
 func _on_Player_died():
 	print('game over')
@@ -180,3 +208,8 @@ func _on_Camera2D_change_grid_location(change_direction):
 	player_grid_pos += change_direction
 	var cur_room = placed_rooms[player_grid_pos.x]
 	cur_enemy_holder = cur_room.get_node('EnemyHolder')
+	
+func _destroy_tile(map, tile_coord):
+	var tile_index = map.get_cellv(tile_coord)
+	if not tile_index in WALL_TILE_INDICES:
+		map.set_cellv(tile_coord, EMPTY_TILE_INDEX)
