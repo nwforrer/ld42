@@ -18,7 +18,7 @@
 [ext_resource path="res://audio/fall.wav" type="AudioStream" id=16]
 [ext_resource path="res://audio/player_jump.wav" type="AudioStream" id=17]
 
-[node name="Game" type="Node2D" index="0"]
+[node name="Game" type="Node2D"]
 
 script = ExtResource( 1 )
 
@@ -61,10 +61,11 @@ _sections_unfolded = [ "Offset", "Smoothing", "Transform" ]
 
 [node name="GUI" parent="Camera2D" index="0" instance=ExtResource( 4 )]
 
+visible = false
+
 [node name="PauseMenu" type="Control" parent="Camera2D" index="1"]
 
 pause_mode = 2
-visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -115,9 +116,9 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 390.0
-margin_top = 321.0
+margin_top = 288.0
 margin_right = 634.0
-margin_bottom = 449.0
+margin_bottom = 482.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -152,7 +153,7 @@ flat = true
 align = 1
 _sections_unfolded = [ "custom_fonts" ]
 
-[node name="Quit" type="Button" parent="Camera2D/PauseMenu/CenterContainer/VBoxContainer" index="1"]
+[node name="Restart" type="Button" parent="Camera2D/PauseMenu/CenterContainer/VBoxContainer" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -161,6 +162,32 @@ anchor_bottom = 0.0
 margin_top = 66.0
 margin_right = 244.0
 margin_bottom = 128.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 6 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Restart"
+flat = true
+align = 1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="Quit" type="Button" parent="Camera2D/PauseMenu/CenterContainer/VBoxContainer" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 132.0
+margin_right = 244.0
+margin_bottom = 194.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -319,6 +346,7 @@ _sections_unfolded = [ "custom_fonts" ]
 [node name="WinMenu" type="Control" parent="Camera2D" index="3"]
 
 pause_mode = 2
+visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -548,6 +576,10 @@ bus = "Master"
 [connection signal="mouse_entered" from="Camera2D/PauseMenu/CenterContainer/VBoxContainer/Continue" to="Camera2D/PauseMenu" method="_on_Continue_mouse_entered"]
 
 [connection signal="pressed" from="Camera2D/PauseMenu/CenterContainer/VBoxContainer/Continue" to="Camera2D/PauseMenu" method="_on_Continue_pressed"]
+
+[connection signal="mouse_entered" from="Camera2D/PauseMenu/CenterContainer/VBoxContainer/Restart" to="Camera2D/PauseMenu" method="_on_Restart_mouse_entered"]
+
+[connection signal="pressed" from="Camera2D/PauseMenu/CenterContainer/VBoxContainer/Restart" to="Camera2D/PauseMenu" method="_on_Restart_pressed"]
 
 [connection signal="mouse_entered" from="Camera2D/PauseMenu/CenterContainer/VBoxContainer/Quit" to="Camera2D/PauseMenu" method="_on_Quit_mouse_entered"]
 

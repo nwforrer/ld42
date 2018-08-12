@@ -3,7 +3,7 @@
 [ext_resource path="res://environment/TileSet.tres" type="TileSet" id=1]
 [ext_resource path="res://environment/Rock.tscn" type="PackedScene" id=2]
 
-[node name="Map03" type="Node2D"]
+[node name="Map03" type="Node2D" index="0"]
 
 [node name="TileMap" type="TileMap" parent="." index="0"]
 
@@ -32,7 +32,7 @@ sort_enabled = true
 
 [node name="Rock" parent="YSort" index="0" instance=ExtResource( 2 )]
 
-position = Vector2( 467.529, 434.518 )
+position = Vector2( 524.664, 517.5 )
 
 [node name="Rock2" parent="YSort" index="1" instance=ExtResource( 2 )]
 
@@ -65,6 +65,14 @@ position = Vector2( 307.445, 613.529 )
 [node name="Position2D4" type="Position2D" parent="EnemySpawns" index="3"]
 
 position = Vector2( 878.001, 158 )
+
+[node name="Position2D5" type="Position2D" parent="EnemySpawns" index="4"]
+
+position = Vector2( 892.965, 375.66 )
+
+[node name="Position2D6" type="Position2D" parent="EnemySpawns" index="5"]
+
+position = Vector2( 131.155, 103.585 )
 
 [node name="DoorHolder" type="Node2D" parent="." index="3"]
 

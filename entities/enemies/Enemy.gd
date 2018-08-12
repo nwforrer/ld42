@@ -53,7 +53,7 @@ func _change_state(new_state):
 			$AnimationPlayer.play('leap')
 			emit_signal('enemy_leap', self)
 		IN_AIR:
-			state_time = 2
+			state_time = 1
 			
 			position = smash_pos
 			

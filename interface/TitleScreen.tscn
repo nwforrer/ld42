@@ -5,7 +5,7 @@
 [ext_resource path="res://interface/buttons/NewGameButton.tscn" type="PackedScene" id=3]
 [ext_resource path="res://interface/buttons/HelpButton.tscn" type="PackedScene" id=4]
 [ext_resource path="res://interface/buttons/QuitButton.tscn" type="PackedScene" id=5]
-[ext_resource path="res://entities/player/head_front.png" type="Texture" id=6]
+[ext_resource path="res://interface/Player.png" type="Texture" id=6]
 [ext_resource path="res://interface/fonts/titanone_24.tres" type="DynamicFont" id=7]
 [ext_resource path="res://interface/fade_in/FadeIn.tscn" type="PackedScene" id=8]
 
@@ -35,7 +35,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-color = Color( 0.0939941, 0.21875, 0.180738, 1 )
+color = Color( 0.108032, 0.160346, 0.234375, 1 )
 
 [node name="Menu" type="VBoxContainer" parent="." index="1"]
 
@@ -154,10 +154,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 172.0
-margin_top = 87.0
-margin_right = 218.0
-margin_bottom = 141.0
+margin_left = 162.0
+margin_top = 50.0
+margin_right = 228.0
+margin_bottom = 178.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -167,7 +167,7 @@ size_flags_vertical = 1
 texture = ExtResource( 6 )
 stretch_mode = 0
 
-[node name="VersionLabel" type="Label" parent="Menu" index="2"]
+[node name="ControlsLabel" type="Label" parent="Menu" index="2"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -183,7 +183,13 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 3
 custom_fonts/font = ExtResource( 7 )
-text = "Created for Ludum Dare 42"
+text = "Created for Ludum Dare 42
+
+Controls:
+Move: WASD or Arrow keys
+Jump: Spacebar
+Fire: Left mouse button
+Aim: Mouse"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1

@@ -182,6 +182,10 @@ func _on_Ability_spawn_projectile(projectile):
 func _on_Projectile_collision(projectile, collider):
 	$Audio/Explode.play()
 	
+	var smoke = load('res://abilities/Smoke.tscn').instance()
+	smoke.global_position = collider.global_position
+	add_child(smoke)
+	
 	if cur_enemy_holder.get_child_count() == 1:
 		if player_grid_pos.x == placed_rooms.size() - 1:
 			$Camera2D/WinMenu.display()
@@ -217,6 +221,11 @@ func _on_Enemy_smash(smash_pos):
 	var tile_map = placed_rooms[smash_grid_pos.x].get_node('TileMap')
 	if not tile_map:
 		return
+		
+	var dust = load('res://abilities/Dust.tscn').instance()
+	dust.global_position = smash_pos
+	dust.get_node('Particles2D').emitting = true
+	add_child(dust)
 		
 	if smash_grid_pos == player_grid_pos:
 		$Audio/Smash.play()

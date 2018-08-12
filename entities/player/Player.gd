@@ -125,6 +125,19 @@ func _process(delta):
 	else:
 		$Pivot.scale.x = 1
 	
+	if facing.y > 0:
+		$Pivot.hide()
+		$PivotFront.show()
+		$PivotBack.hide()
+	elif facing.y < 0:
+		$Pivot.hide()
+		$PivotFront.hide()
+		$PivotBack.show()
+	else:
+		$Pivot.show()
+		$PivotFront.hide()
+		$PivotBack.hide()
+	
 	if state == IDLE and velocity.length() > 0:
 		_change_state(WALK)
 	elif state == WALK:
@@ -154,6 +167,8 @@ func _on_Tween_tween_completed(object, key):
 func set_height(value):
 	height = value
 	$Pivot.position.y = -height
+	$PivotFront.position.y = -height
+	$PivotBack.position.y = -height
 	var shadow_scale = 1.0 - value / MAX_JUMP_HEIGHT * 0.5
 	$Shadow.scale = Vector2(shadow_scale, shadow_scale)
 
