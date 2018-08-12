@@ -25,9 +25,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.4"
-     inkscape:cx="391.66821"
-     inkscape:cy="774.14115"
+     inkscape:zoom="0.7"
+     inkscape:cx="187.50793"
+     inkscape:cy="695.4299"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -84,6 +84,36 @@
          cy="69.458328"
          rx="3.7797618"
          ry="3.5907736" />
+    </g>
+    <g
+       id="g2939">
+      <path
+         style="opacity:1;fill:#800000;fill-opacity:1;fill-rule:nonzero;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none"
+         d="m 121.70834,152.4241 c 0,14.92566 -10.96571,13.04018 -25.891375,13.04018 -14.92566,0 -28.159226,1.88548 -28.159228,-13.04018 0,-14.92566 12.099639,-27.02529 27.025299,-27.02529 14.925664,-1e-5 27.025304,12.09963 27.025304,27.02529 z"
+         id="path2921"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="sssss" />
+      <ellipse
+         style="opacity:0.5;fill:#aa0000;fill-opacity:1;fill-rule:nonzero;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none"
+         id="ellipse2923"
+         cx="82.020844"
+         cy="141.4628"
+         rx="3.7797618"
+         ry="3.5907736" />
+      <ellipse
+         ry="3.5907736"
+         rx="3.7797618"
+         cy="135.98215"
+         cx="105.07739"
+         id="ellipse2925"
+         style="opacity:0.5;fill:#aa0000;fill-opacity:1;fill-rule:nonzero;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none" />
+      <ellipse
+         ry="3.5907736"
+         rx="3.7797618"
+         cy="129.93452"
+         cx="92.037216"
+         id="ellipse2927"
+         style="opacity:0.5;fill:#aa0000;fill-opacity:1;fill-rule:nonzero;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none" />
     </g>
   </g>
 </svg>

@@ -73,12 +73,20 @@ func spawn_enemies(map):
 	var spawn_list = map.get_node('EnemySpawns')
 	print('spawn_list:' + str(spawn_list))
 	var enemy = load('res://entities/enemies/Enemy.tscn')
+	var enemy_red = load('res://entities/enemies/EnemyRed.tscn')
 	for e in spawn_list.get_children():
 		print('spawn:' + str(e) + ' at ' + str(e.global_position))
-		var new_enemy = enemy.instance()
-		new_enemy.position = e.position
-		new_enemy.connect('enemy_leap', self, '_on_Enemy_leap')
-		new_enemy.connect('enemy_smash', self, '_on_Enemy_smash')
+		var new_enemy
+		if randf()*100 < 50:
+			new_enemy = enemy.instance()
+			new_enemy.position = e.position
+			new_enemy.connect('enemy_leap', self, '_on_Enemy_leap')
+			new_enemy.connect('enemy_smash', self, '_on_Enemy_smash')
+		else:
+			new_enemy = enemy_red.instance()
+			new_enemy.position = e.position
+			new_enemy.connect('enemy_leap', self, '_on_Enemy_leap')
+			new_enemy.connect('enemy_smash', self, '_on_Enemy_smash')
 		map.get_node('EnemyHolder').add_child(new_enemy)
 
 func spawn_room():
