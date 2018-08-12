@@ -19,8 +19,17 @@ var map_size = Vector2()
 var available_room_files = []
 var placed_rooms = []
 
+func process_input():
+	if Input.is_action_just_pressed('pause'):
+		$Camera2D/PauseMenu.show()
+		get_tree().paused = true
+
 func _ready():
 	$Player/FireSpellAbility.connect('spawn_projectile', self, '_on_Ability_spawn_projectile')
+	
+	$Camera2D/PauseMenu.hide()
+	$Camera2D/GameOverMenu.hide()
+	$Camera2D/WinMenu.hide()
 	
 	#rand_seed(0)
 	randomize()
@@ -57,6 +66,8 @@ func reset():
 	cur_enemy_holder = cur_room.get_node('EnemyHolder')
 
 func _process(delta):
+	process_input()
+	
 	var tile_map = placed_rooms[player_grid_pos.x].get_node('TileMap')
 	if not tile_map:
 		return
@@ -166,6 +177,9 @@ func _on_Ability_spawn_projectile(projectile):
 
 func _on_Projectile_collision(projectile, collider):
 	if cur_enemy_holder.get_child_count() == 1:
+		if player_grid_pos.x == placed_rooms.size() - 1:
+			$Camera2D/WinMenu.show()
+			get_tree().paused = true
 		emit_signal('map_complete', placed_rooms[player_grid_pos.x])
 		
 	projectile.queue_free()
@@ -209,8 +223,8 @@ func _on_Enemy_smash(smash_pos):
 		_destroy_tile(tile_map, Vector2(tile_coord.x, tile_coord.y-1))
 
 func _on_Player_died():
-	print('game over')
-	reset()
+	$Camera2D/GameOverMenu.show()
+	get_tree().paused = true
 
 func _on_Camera2D_change_grid_location(change_direction):
 	player_grid_pos += change_direction

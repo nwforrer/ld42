@@ -1,11 +1,16 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Game.gd" type="Script" id=1]
 [ext_resource path="res://entities/player/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Camera2D.gd" type="Script" id=3]
 [ext_resource path="res://interface/GUI.tscn" type="PackedScene" id=4]
+[ext_resource path="res://interface/PauseMenu.gd" type="Script" id=5]
+[ext_resource path="res://interface/fonts/titanone_48.tres" type="DynamicFont" id=6]
+[ext_resource path="res://interface/GameOverMenu.gd" type="Script" id=7]
+[ext_resource path="res://interface/fonts/titanone_24.tres" type="DynamicFont" id=8]
+[ext_resource path="res://interface/WinMenu.gd" type="Script" id=9]
 
-[node name="Game" type="Node2D"]
+[node name="Game" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 
@@ -46,6 +51,399 @@ _sections_unfolded = [ "Offset", "Smoothing", "Transform" ]
 
 [node name="GUI" parent="Camera2D" index="0" instance=ExtResource( 4 )]
 
+[node name="PauseMenu" type="Control" parent="Camera2D" index="1"]
+
+pause_mode = 2
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 1025.0
+margin_bottom = 770.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+script = ExtResource( 5 )
+_sections_unfolded = [ "Pause" ]
+
+[node name="ColorRect" type="ColorRect" parent="Camera2D/PauseMenu" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+color = Color( 0, 0, 0, 0.281765 )
+
+[node name="CenterContainer" type="CenterContainer" parent="Camera2D/PauseMenu" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+use_top_left = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Camera2D/PauseMenu/CenterContainer" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 390.0
+margin_top = 321.0
+margin_right = 634.0
+margin_bottom = 449.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 5
+size_flags_vertical = 1
+alignment = 0
+_sections_unfolded = [ "Size Flags" ]
+
+[node name="Continue" type="Button" parent="Camera2D/PauseMenu/CenterContainer/VBoxContainer" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 244.0
+margin_bottom = 62.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 6 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Continue"
+flat = true
+align = 1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="Quit" type="Button" parent="Camera2D/PauseMenu/CenterContainer/VBoxContainer" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 66.0
+margin_right = 244.0
+margin_bottom = 128.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 6 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Quit"
+flat = true
+align = 1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="GameOverMenu" type="Control" parent="Camera2D" index="2"]
+
+pause_mode = 2
+editor/display_folded = true
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 1025.0
+margin_bottom = 767.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+script = ExtResource( 7 )
+_sections_unfolded = [ "Pause" ]
+
+[node name="ColorRect" type="ColorRect" parent="Camera2D/GameOverMenu" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+color = Color( 0, 0, 0, 0.281765 )
+
+[node name="CenterContainer" type="CenterContainer" parent="Camera2D/GameOverMenu" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+use_top_left = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Camera2D/GameOverMenu/CenterContainer" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 401.0
+margin_top = 316.0
+margin_right = 624.0
+margin_bottom = 450.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+alignment = 0
+
+[node name="Label" type="Label" parent="Camera2D/GameOverMenu/CenterContainer/VBoxContainer" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 223.0
+margin_bottom = 56.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 6 )
+text = "You died"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Size Flags", "custom_fonts" ]
+
+[node name="TryAgain" type="Button" parent="Camera2D/GameOverMenu/CenterContainer/VBoxContainer" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 60.0
+margin_right = 223.0
+margin_bottom = 95.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 8 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Try Again?"
+flat = true
+align = 1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="Quit" type="Button" parent="Camera2D/GameOverMenu/CenterContainer/VBoxContainer" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 99.0
+margin_right = 223.0
+margin_bottom = 134.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 8 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Quit"
+flat = true
+align = 1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="WinMenu" type="Control" parent="Camera2D" index="3"]
+
+pause_mode = 2
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 1025.0
+margin_bottom = 767.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+script = ExtResource( 9 )
+_sections_unfolded = [ "Pause" ]
+
+[node name="ColorRect" type="ColorRect" parent="Camera2D/WinMenu" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+color = Color( 0, 0, 0, 0.281765 )
+
+[node name="CenterContainer" type="CenterContainer" parent="Camera2D/WinMenu" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+use_top_left = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Camera2D/WinMenu/CenterContainer" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 401.0
+margin_top = 316.0
+margin_right = 624.0
+margin_bottom = 450.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+alignment = 0
+
+[node name="Label" type="Label" parent="Camera2D/WinMenu/CenterContainer/VBoxContainer" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 223.0
+margin_bottom = 56.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 6 )
+text = "You win!"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Size Flags", "custom_fonts" ]
+
+[node name="PlayAgain" type="Button" parent="Camera2D/WinMenu/CenterContainer/VBoxContainer" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 60.0
+margin_right = 223.0
+margin_bottom = 95.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 8 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Play Again?"
+flat = true
+align = 1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="Quit" type="Button" parent="Camera2D/WinMenu/CenterContainer/VBoxContainer" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 99.0
+margin_right = 223.0
+margin_bottom = 134.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 8 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Quit"
+flat = true
+align = 1
+_sections_unfolded = [ "custom_fonts" ]
+
 [connection signal="hit_empty_space" from="." to="Player" method="_on_Game_hit_empty_space"]
 
 [connection signal="room_created" from="." to="Camera2D" method="_on_Game_room_created"]
@@ -55,5 +453,17 @@ _sections_unfolded = [ "Offset", "Smoothing", "Transform" ]
 [connection signal="died" from="Player" to="." method="_on_Player_died"]
 
 [connection signal="change_grid_location" from="Camera2D" to="." method="_on_Camera2D_change_grid_location"]
+
+[connection signal="pressed" from="Camera2D/PauseMenu/CenterContainer/VBoxContainer/Continue" to="Camera2D/PauseMenu" method="_on_Continue_pressed"]
+
+[connection signal="pressed" from="Camera2D/PauseMenu/CenterContainer/VBoxContainer/Quit" to="Camera2D/PauseMenu" method="_on_Quit_pressed"]
+
+[connection signal="pressed" from="Camera2D/GameOverMenu/CenterContainer/VBoxContainer/TryAgain" to="Camera2D/GameOverMenu" method="_on_TryAgain_pressed"]
+
+[connection signal="pressed" from="Camera2D/GameOverMenu/CenterContainer/VBoxContainer/Quit" to="Camera2D/GameOverMenu" method="_on_Quit_pressed"]
+
+[connection signal="pressed" from="Camera2D/WinMenu/CenterContainer/VBoxContainer/PlayAgain" to="Camera2D/WinMenu" method="_on_PlayAgain_pressed"]
+
+[connection signal="pressed" from="Camera2D/WinMenu/CenterContainer/VBoxContainer/Quit" to="Camera2D/WinMenu" method="_on_Quit_pressed"]
 
 

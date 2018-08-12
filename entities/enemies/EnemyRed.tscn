@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://entities/enemies/EnemyRed.gd" type="Script" id=1]
 [ext_resource path="res://entities/enemies/enemy_red.png" type="Texture" id=2]
@@ -46,6 +46,49 @@ tracks/2/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 0, 2.0919 ), Vector2( 0, 4.13785 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+
+resource_name = "leap"
+length = 0.3
+loop = false
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Pivot:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.15 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, -9.75966 ), Vector2( 0, -100.76 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Pivot:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.15 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 0.896892 ), Vector2( 1e-05, 1e-05 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("shadow:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.15 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.766201, 0.766201 ), Vector2( 1e-05, 1e-05 ) ]
 }
 
 [sub_resource type="Animation" id=3]
@@ -187,13 +230,14 @@ tracks/3/keys = {
 custom_solver_bias = 0.0
 radius = 31.2021
 
-[node name="EnemyRed" type="KinematicBody2D" index="0"]
+[node name="EnemyRed" type="KinematicBody2D"]
 
 input_pickable = false
-collision_layer = 1
-collision_mask = 1
+collision_layer = 8
+collision_mask = 3
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
+_sections_unfolded = [ "Collision" ]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="0"]
 
@@ -203,14 +247,16 @@ playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
 anims/idle = SubResource( 2 )
+anims/leap = SubResource( 5 )
 anims/reset = SubResource( 3 )
 anims/walk = SubResource( 4 )
 blend_times = [  ]
 
 [node name="Pivot" type="Position2D" parent="." index="1"]
 
-position = Vector2( 0, -9.75966 )
-scale = Vector2( 1, 0.896892 )
+position = Vector2( 0, -100.76 )
+scale = Vector2( 1e-05, 1e-05 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="enemy" type="Sprite" parent="Pivot" index="0"]
 
@@ -221,7 +267,7 @@ texture = ExtResource( 2 )
 modulate = Color( 1, 1, 1, 0.519333 )
 show_behind_parent = true
 position = Vector2( 0, 20 )
-scale = Vector2( 0.766201, 0.766201 )
+scale = Vector2( 1e-05, 1e-05 )
 texture = ExtResource( 3 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
