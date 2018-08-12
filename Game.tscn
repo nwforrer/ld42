@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Game.gd" type="Script" id=1]
 [ext_resource path="res://entities/player/Player.tscn" type="PackedScene" id=2]
@@ -9,6 +9,14 @@
 [ext_resource path="res://interface/GameOverMenu.gd" type="Script" id=7]
 [ext_resource path="res://interface/fonts/titanone_24.tres" type="DynamicFont" id=8]
 [ext_resource path="res://interface/WinMenu.gd" type="Script" id=9]
+[ext_resource path="res://audio/intro.wav" type="AudioStream" id=10]
+[ext_resource path="res://audio/song.wav" type="AudioStream" id=11]
+[ext_resource path="res://audio/shoot.wav" type="AudioStream" id=12]
+[ext_resource path="res://audio/smash.wav" type="AudioStream" id=13]
+[ext_resource path="res://audio/jump.wav" type="AudioStream" id=14]
+[ext_resource path="res://audio/explode.wav" type="AudioStream" id=15]
+[ext_resource path="res://audio/fall.wav" type="AudioStream" id=16]
+[ext_resource path="res://audio/player_jump.wav" type="AudioStream" id=17]
 
 [node name="Game" type="Node2D" index="0"]
 
@@ -18,11 +26,13 @@ script = ExtResource( 1 )
 
 _sections_unfolded = [ "Z Index" ]
 
-[node name="Player" parent="." index="1" instance=ExtResource( 2 )]
+[node name="ProjectileHolder" type="Position2D" parent="." index="1"]
+
+[node name="Player" parent="." index="2" instance=ExtResource( 2 )]
 
 position = Vector2( 516.02, 378.682 )
 
-[node name="Camera2D" type="Camera2D" parent="." index="2"]
+[node name="Camera2D" type="Camera2D" parent="." index="3"]
 
 anchor_mode = 0
 rotating = false
@@ -171,7 +181,6 @@ _sections_unfolded = [ "custom_fonts" ]
 [node name="GameOverMenu" type="Control" parent="Camera2D" index="2"]
 
 pause_mode = 2
-editor/display_folded = true
 visible = false
 anchor_left = 0.0
 anchor_top = 0.0
@@ -444,6 +453,84 @@ flat = true
 align = 1
 _sections_unfolded = [ "custom_fonts" ]
 
+[node name="Audio" type="Node2D" parent="." index="4"]
+
+pause_mode = 2
+_sections_unfolded = [ "Pause" ]
+
+[node name="IntroAudio" type="AudioStreamPlayer" parent="Audio" index="0"]
+
+stream = ExtResource( 10 )
+volume_db = -10.0
+pitch_scale = 1.0
+autoplay = true
+mix_target = 0
+bus = "Master"
+_sections_unfolded = [ "Pause" ]
+
+[node name="Soundtrack" type="AudioStreamPlayer" parent="Audio" index="1"]
+
+stream = ExtResource( 11 )
+volume_db = -10.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="Shoot" type="AudioStreamPlayer" parent="Audio" index="2"]
+
+stream = ExtResource( 12 )
+volume_db = -10.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="Smash" type="AudioStreamPlayer" parent="Audio" index="3"]
+
+stream = ExtResource( 13 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="Jump" type="AudioStreamPlayer" parent="Audio" index="4"]
+
+stream = ExtResource( 14 )
+volume_db = -15.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="Explode" type="AudioStreamPlayer" parent="Audio" index="5"]
+
+stream = ExtResource( 15 )
+volume_db = -10.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="Fall" type="AudioStreamPlayer" parent="Audio" index="6"]
+
+stream = ExtResource( 16 )
+volume_db = -10.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="PlayerJump" type="AudioStreamPlayer" parent="Audio" index="7"]
+
+stream = ExtResource( 17 )
+volume_db = -10.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
 [connection signal="hit_empty_space" from="." to="Player" method="_on_Game_hit_empty_space"]
 
 [connection signal="room_created" from="." to="Camera2D" method="_on_Game_room_created"]
@@ -452,18 +539,38 @@ _sections_unfolded = [ "custom_fonts" ]
 
 [connection signal="died" from="Player" to="." method="_on_Player_died"]
 
+[connection signal="falling" from="Player" to="." method="_on_Player_falling"]
+
+[connection signal="jump" from="Player" to="." method="_on_Player_jump"]
+
 [connection signal="change_grid_location" from="Camera2D" to="." method="_on_Camera2D_change_grid_location"]
+
+[connection signal="mouse_entered" from="Camera2D/PauseMenu/CenterContainer/VBoxContainer/Continue" to="Camera2D/PauseMenu" method="_on_Continue_mouse_entered"]
 
 [connection signal="pressed" from="Camera2D/PauseMenu/CenterContainer/VBoxContainer/Continue" to="Camera2D/PauseMenu" method="_on_Continue_pressed"]
 
+[connection signal="mouse_entered" from="Camera2D/PauseMenu/CenterContainer/VBoxContainer/Quit" to="Camera2D/PauseMenu" method="_on_Quit_mouse_entered"]
+
 [connection signal="pressed" from="Camera2D/PauseMenu/CenterContainer/VBoxContainer/Quit" to="Camera2D/PauseMenu" method="_on_Quit_pressed"]
+
+[connection signal="mouse_entered" from="Camera2D/GameOverMenu/CenterContainer/VBoxContainer/TryAgain" to="Camera2D/GameOverMenu" method="_on_TryAgain_mouse_entered"]
 
 [connection signal="pressed" from="Camera2D/GameOverMenu/CenterContainer/VBoxContainer/TryAgain" to="Camera2D/GameOverMenu" method="_on_TryAgain_pressed"]
 
+[connection signal="mouse_entered" from="Camera2D/GameOverMenu/CenterContainer/VBoxContainer/Quit" to="Camera2D/GameOverMenu" method="_on_Quit_mouse_entered"]
+
 [connection signal="pressed" from="Camera2D/GameOverMenu/CenterContainer/VBoxContainer/Quit" to="Camera2D/GameOverMenu" method="_on_Quit_pressed"]
+
+[connection signal="mouse_entered" from="Camera2D/WinMenu/CenterContainer/VBoxContainer/PlayAgain" to="Camera2D/WinMenu" method="_on_PlayAgain_mouse_entered"]
 
 [connection signal="pressed" from="Camera2D/WinMenu/CenterContainer/VBoxContainer/PlayAgain" to="Camera2D/WinMenu" method="_on_PlayAgain_pressed"]
 
+[connection signal="mouse_entered" from="Camera2D/WinMenu/CenterContainer/VBoxContainer/Quit" to="Camera2D/WinMenu" method="_on_Quit_mouse_entered"]
+
 [connection signal="pressed" from="Camera2D/WinMenu/CenterContainer/VBoxContainer/Quit" to="Camera2D/WinMenu" method="_on_Quit_pressed"]
+
+[connection signal="finished" from="Audio/IntroAudio" to="." method="_on_IntroAudio_finished"]
+
+[connection signal="finished" from="Audio/Soundtrack" to="." method="_on_Soundtrack_finished"]
 
 

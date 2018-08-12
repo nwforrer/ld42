@@ -1,8 +1,8 @@
 extends Control
 
-func _ready():
-	pass
-
+func display():
+	show()
+	$CenterContainer/VBoxContainer/Continue.grab_focus()
 
 func _on_Continue_pressed():
 	hide()
@@ -11,3 +11,11 @@ func _on_Continue_pressed():
 
 func _on_Quit_pressed():
 	get_tree().change_scene('res://interface/QuitPage.tscn')
+
+
+func _on_Continue_mouse_entered():
+	$CenterContainer/VBoxContainer/Continue.grab_focus()
+
+
+func _on_Quit_mouse_entered():
+	$CenterContainer/VBoxContainer/Quit.grab_focus()

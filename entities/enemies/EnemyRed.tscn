@@ -285,6 +285,8 @@ autostart = false
 
 [node name="DebugInfo" parent="." index="5" instance=ExtResource( 4 )]
 
+visible = false
+
 [connection signal="timeout" from="StateChangeTimer" to="." method="_on_StateChangeTimer_timeout"]
 
 

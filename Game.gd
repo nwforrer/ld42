@@ -21,7 +21,7 @@ var placed_rooms = []
 
 func process_input():
 	if Input.is_action_just_pressed('pause'):
-		$Camera2D/PauseMenu.show()
+		$Camera2D/PauseMenu.display()
 		get_tree().paused = true
 
 func _ready():
@@ -57,6 +57,8 @@ func reset():
 
 	for m in $MapHolder.get_children():
 		m.queue_free()
+	for p in $ProjectileHolder.get_children():
+		p.queue_free()
 
 	while available_room_files.size() != 0:
 		var new_room = spawn_room()
@@ -173,12 +175,16 @@ func _on_Ability_spawn_projectile(projectile):
 	var bounds = Rect2(map.position, map_size)
 	projectile.bounds = bounds
 	projectile.connect('projectile_collision', self, '_on_Projectile_collision')
-	get_node("/root").add_child(projectile)
+	$ProjectileHolder.add_child(projectile)
+	
+	$Audio/Shoot.play()
 
 func _on_Projectile_collision(projectile, collider):
+	$Audio/Explode.play()
+	
 	if cur_enemy_holder.get_child_count() == 1:
 		if player_grid_pos.x == placed_rooms.size() - 1:
-			$Camera2D/WinMenu.show()
+			$Camera2D/WinMenu.display()
 			get_tree().paused = true
 		emit_signal('map_complete', placed_rooms[player_grid_pos.x])
 		
@@ -186,11 +192,14 @@ func _on_Projectile_collision(projectile, collider):
 	collider.queue_free()
 
 func _on_Enemy_leap(enemy):
-	var enemy_pos = enemy.position
+	var enemy_pos = enemy.global_position
 	var enemy_grid_pos = Vector2(floor(enemy_pos.x/map_size.x), floor(enemy_pos.y/map_size.y))
 	var tile_map = placed_rooms[enemy_grid_pos.x].get_node('TileMap')
 	if not tile_map:
 		return
+		
+	if enemy_grid_pos == player_grid_pos:
+		$Audio/Jump.play()
 	
 	var smash_pos
 	while true:
@@ -209,9 +218,12 @@ func _on_Enemy_smash(smash_pos):
 	if not tile_map:
 		return
 		
+	if smash_grid_pos == player_grid_pos:
+		$Audio/Smash.play()
+		
 	var smash_map_pos = smash_pos - $Camera2D.position
 	var tile_coord = tile_map.world_to_map(smash_map_pos)
-	var extra_tile_chance = 30
+	var extra_tile_chance = 30 * (smash_grid_pos.x + 1)
 	_destroy_tile(tile_map, tile_coord)
 	if (tile_coord.x+1) < map_size.x and randf()*100 < extra_tile_chance:
 		_destroy_tile(tile_map, Vector2(tile_coord.x+1, tile_coord.y))
@@ -221,9 +233,19 @@ func _on_Enemy_smash(smash_pos):
 		_destroy_tile(tile_map, Vector2(tile_coord.x, tile_coord.y+1))
 	if (tile_coord.y-1) > 0 and randf()*100 < extra_tile_chance:
 		_destroy_tile(tile_map, Vector2(tile_coord.x, tile_coord.y-1))
+	if smash_grid_pos.x > 0:
+		if (tile_coord.y-1) > 0 and randf()*100 < extra_tile_chance:
+			_destroy_tile(tile_map, Vector2(tile_coord.x-1, tile_coord.y-1))
+			_destroy_tile(tile_map, Vector2(tile_coord.x+1, tile_coord.y+1))
+	if smash_grid_pos.x > 1:
+		if (tile_coord.y-1) > 0 and randf()*100 < extra_tile_chance:
+			_destroy_tile(tile_map, Vector2(tile_coord.x-1, tile_coord.y-1))
+			_destroy_tile(tile_map, Vector2(tile_coord.x+1, tile_coord.y+1))
+			_destroy_tile(tile_map, Vector2(tile_coord.x-1, tile_coord.y+1))
+			_destroy_tile(tile_map, Vector2(tile_coord.x+1, tile_coord.y-1))
 
 func _on_Player_died():
-	$Camera2D/GameOverMenu.show()
+	$Camera2D/GameOverMenu.display()
 	get_tree().paused = true
 
 func _on_Camera2D_change_grid_location(change_direction):
@@ -235,3 +257,19 @@ func _destroy_tile(map, tile_coord):
 	var tile_index = map.get_cellv(tile_coord)
 	if not tile_index in WALL_TILE_INDICES:
 		map.set_cellv(tile_coord, EMPTY_TILE_INDEX)
+
+
+func _on_IntroAudio_finished():
+	$Audio/Soundtrack.play()
+
+
+func _on_Soundtrack_finished():
+	$Audio/Soundtrack.play()
+
+
+func _on_Player_falling():
+	$Audio/Fall.play()
+
+
+func _on_Player_jump():
+	$Audio/PlayerJump.play()

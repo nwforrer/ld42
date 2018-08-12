@@ -2,7 +2,9 @@ extends KinematicBody2D
 
 signal action_used
 signal state_changed
+signal falling
 signal died
+signal jump
 
 enum STATES {IDLE, WALK, ACTION, JUMP, FALLING}
 
@@ -105,6 +107,7 @@ func _change_state(new_state):
 			$Tween.interpolate_method(self, '_animate_bump_height', 0, 1, BUMP_DURATION, Tween.TRANS_LINEAR, Tween.EASE_IN)
 			$Tween.start()
 		JUMP:
+			emit_signal('jump')
 			air_speed = velocity.length()
 			air_velocity = velocity
 			$AnimationPlayer.play('jump')
@@ -112,6 +115,7 @@ func _change_state(new_state):
 			$Tween.interpolate_method(self, '_animate_jump_height', 0, 1, JUMP_DURATION, Tween.TRANS_LINEAR, Tween.EASE_IN)
 			$Tween.start()
 		FALLING:
+			emit_signal('falling')
 			$AnimationPlayer.play("falling")
 			velocity = Vector2()
 

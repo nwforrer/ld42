@@ -193,6 +193,12 @@ _sections_unfolded = [ "Size Flags", "custom_fonts" ]
 
 visible = false
 
+[connection signal="mouse_entered" from="Menu/CenterRow/Buttons/NewGameButton" to="." method="_on_NewGameButton_mouse_entered"]
+
+[connection signal="mouse_entered" from="Menu/CenterRow/Buttons/HelpButton" to="." method="_on_HelpButton_mouse_entered"]
+
+[connection signal="mouse_entered" from="Menu/CenterRow/Buttons/QuitButton" to="." method="_on_QuitButton_mouse_entered"]
+
 [connection signal="fade_finished" from="FadeIn" to="." method="_on_FadeIn_fade_finished"]
 
 
