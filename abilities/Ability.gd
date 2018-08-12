@@ -5,5 +5,5 @@ var can_damage = false
 func _ready():
 	pass
 
-func use():
+func use(facing):
 	pass

@@ -1,10 +1,11 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Game.gd" type="Script" id=1]
 [ext_resource path="res://entities/player/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://interface/GUI.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Camera2D.gd" type="Script" id=4]
 
-[node name="Game" type="Node2D"]
+[node name="Game" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 
@@ -16,11 +17,40 @@ _sections_unfolded = [ "Z Index" ]
 
 [node name="Player" parent="." index="2" instance=ExtResource( 2 )]
 
-position = Vector2( 223.818, 147.867 )
+position = Vector2( 516.02, 378.682 )
 
 [node name="GUI" parent="." index="3" instance=ExtResource( 3 )]
 
+[node name="Camera2D" type="Camera2D" parent="." index="4"]
+
+anchor_mode = 0
+rotating = false
+current = true
+zoom = Vector2( 1, 1 )
+limit_left = -10000000
+limit_top = -10000000
+limit_right = 10000000
+limit_bottom = 10000000
+limit_smoothed = false
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+smoothing_enabled = true
+smoothing_speed = 5.0
+offset_v = 0.0
+offset_h = 0.0
+drag_margin_left = 0.2
+drag_margin_top = 0.2
+drag_margin_right = 0.2
+drag_margin_bottom = 0.2
+editor_draw_screen = true
+editor_draw_limits = false
+editor_draw_drag_margin = false
+script = ExtResource( 4 )
+_sections_unfolded = [ "Offset", "Smoothing", "Transform" ]
+
 [connection signal="hit_empty_space" from="." to="Player" method="_on_Game_hit_empty_space"]
+
+[connection signal="room_created" from="." to="Camera2D" method="_on_Game_room_created"]
 
 [connection signal="action_used" from="Player" to="." method="_on_Player_action_used"]
 

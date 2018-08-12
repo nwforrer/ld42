@@ -27,6 +27,8 @@ var velocity = Vector2()
 var air_speed = 0.0
 var air_velocity = 0.0
 
+var facing = Vector2(1, 0)
+
 var state
 
 func process_input():
@@ -43,12 +45,17 @@ func process_input():
 	if Input.is_action_pressed("move_right"):
 		move_velocity.x += 1
 		
+	if move_velocity.x > 0:
+		facing.x = 1
+	elif move_velocity.x < 0:
+		facing.x = -1
+		
 	if Input.is_action_pressed("primary_action"):
 		if state in [IDLE, WALK]:
 			if primary_action and can_shoot:
 				can_shoot = false
 				$ActionTimer.start()
-				primary_action.use()
+				primary_action.use(facing)
 				emit_signal("action_used", $Pivot.global_position)
 				_change_state(ACTION)
 			
@@ -88,7 +95,7 @@ func _change_state(new_state):
 		ACTION:
 			$AnimationPlayer.stop()
 			
-			$Tween.interpolate_property(self, 'position', position, position + BUMP_DISTANCE * -Vector2(1,0), BUMP_DURATION, Tween.TRANS_LINEAR, Tween.EASE_IN)
+			$Tween.interpolate_property(self, 'position', position, position + BUMP_DISTANCE * -facing, BUMP_DURATION, Tween.TRANS_LINEAR, Tween.EASE_IN)
 			$Tween.interpolate_method(self, '_animate_bump_height', 0, 1, BUMP_DURATION, Tween.TRANS_LINEAR, Tween.EASE_IN)
 			$Tween.start()
 		JUMP:
@@ -103,6 +110,11 @@ func _change_state(new_state):
 			velocity = Vector2()
 
 func _process(delta):
+	if facing.x < 0:
+		$Pivot.scale.x = -1
+	else:
+		$Pivot.scale.x = 1
+	
 	if state == IDLE and velocity.length() > 0:
 		_change_state(WALK)
 	elif state == WALK:
