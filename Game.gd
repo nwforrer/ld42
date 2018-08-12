@@ -13,22 +13,12 @@ const WALL_TILE_INDICES = [2,3]
 var player_grid_pos = Vector2()
 var cur_enemy_holder
 
+var map_size = Vector2()
+
 var available_room_files = []
 var placed_rooms = []
 
 func _ready():
-	var dir = Directory.new()
-	dir.open(MAP_DIR)
-	dir.list_dir_begin()
-	while true:
-		var file = dir.get_next()
-		if file == "":
-			break
-		elif file.ends_with('.tscn'):
-			print(file)
-			available_room_files.append(file)
-	dir.list_dir_end()
-	
 	$Player/FireSpellAbility.connect('spawn_projectile', self, '_on_Ability_spawn_projectile')
 	
 	#rand_seed(0)
@@ -42,6 +32,18 @@ func _generate_room_order():
 func reset():
 	placed_rooms.clear()
 	$Player.reset(Vector2(200, 200))
+	
+	var dir = Directory.new()
+	dir.open(MAP_DIR)
+	dir.list_dir_begin()
+	while true:
+		var file = dir.get_next()
+		if file == "":
+			break
+		elif file.ends_with('.tscn'):
+			print(file)
+			available_room_files.append(file)
+	dir.list_dir_end()
 
 	for m in $MapHolder.get_children():
 		m.queue_free()
@@ -54,11 +56,12 @@ func reset():
 	cur_enemy_holder = cur_room.get_node('EnemyHolder')
 
 func _process(delta):
-	var tile_map = $MapHolder/Map/TileMap
+	var tile_map = placed_rooms[player_grid_pos.x].get_node('TileMap')
 	if not tile_map:
 		return
 		
-	var player_coord = tile_map.world_to_map($Player.global_position)
+	var player_map_pos = $Player.global_position - $Camera2D.position
+	var player_coord = tile_map.world_to_map(player_map_pos)
 	var tile_index = tile_map.get_cellv(player_coord)
 	if tile_index == EMPTY_TILE_INDEX and $Player.state != $Player.STATES.ACTION and abs($Player.height) < 1:
 		emit_signal('hit_empty_space')
@@ -93,7 +96,7 @@ func spawn_room():
 	var tile_map = next_room.get_node('TileMap')
 	var cell_size = tile_map.cell_size
 	var num_tiles = tile_map.get_used_rect().size
-	var map_size = num_tiles * cell_size
+	map_size = num_tiles * cell_size
 	
 	if previous_room:
 		next_room.position = previous_room.position
@@ -106,14 +109,16 @@ func spawn_room():
 		door_pos += Vector2(cell_size.x/2, cell_size.y/2)
 		var door = door_scn.instance()
 		door.position = door_pos
-		next_room.add_child(door)
+		connect('map_complete', door, '_on_Map_complete')
+		next_room.get_node('DoorHolder').add_child(door)
 	elif available_room_files.size() > 1:
 		tile_map.set_cell(num_tiles.x-1, 5, GROUND_TILE_INDEX)
 		tile_map.set_cell(0, 5, GROUND_TILE_INDEX)
 		var door_pos = tile_map.map_to_world(Vector2(num_tiles.x-1, 5))
 		var door = door_scn.instance()
 		door.position = door_pos
-		next_room.add_child(door)
+		connect('map_complete', door, '_on_Map_complete')
+		next_room.get_node('DoorHolder').add_child(door)
 	else:
 		tile_map.set_cell(0, 5, GROUND_TILE_INDEX)
 		
@@ -142,6 +147,9 @@ func _on_Player_action_used(world_position):
 		tile_map.set_cell(tile_coord.x, tile_coord.y, EMPTY_TILE_INDEX)
 
 func _on_Ability_spawn_projectile(projectile):
+	var map = placed_rooms[player_grid_pos.x]
+	var bounds = Rect2(map.position, map_size)
+	projectile.bounds = bounds
 	projectile.connect('projectile_collision', self, '_on_Projectile_collision')
 	get_node("/root").add_child(projectile)
 
@@ -153,8 +161,13 @@ func _on_Projectile_collision(projectile, collider):
 	collider.queue_free()
 
 func _on_Enemy_leap(leap_pos):
-	var tile_map = $MapHolder/Map/TileMap
-	var tile_coord = tile_map.world_to_map(leap_pos)
+	var leap_grid_pos = Vector2(floor(leap_pos.x/map_size.x), floor(leap_pos.y/map_size.y))
+	var tile_map = placed_rooms[leap_grid_pos.x].get_node('TileMap')
+	if not tile_map:
+		return
+		
+	var leap_map_pos = leap_pos - $Camera2D.position
+	var tile_coord = tile_map.world_to_map(leap_map_pos)
 	var tile_index = tile_map.get_cellv(tile_coord)
 	if not tile_index in WALL_TILE_INDICES:
 		tile_map.set_cellv(tile_coord, EMPTY_TILE_INDEX)

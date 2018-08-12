@@ -19,6 +19,8 @@ const MAX_JUMP_HEIGHT = 80
 onready var primary_action = $FireSpellAbility
 onready var secondary_action = $FireSpellAbility
 
+onready var camera = get_parent().get_node('Camera2D')
+
 var can_shoot = true
 
 var height = 0.0 setget set_height
@@ -30,6 +32,12 @@ var air_velocity = 0.0
 var facing = Vector2(1, 0)
 
 var state
+
+func _input(event):
+	if event is InputEventMouseMotion:
+		var map_pos = global_position - camera.position
+		var mouse_dist = event.position - map_pos
+		facing = Vector2(mouse_dist.x, 0) if abs(mouse_dist.x) > abs(mouse_dist.y) else Vector2(0, mouse_dist.y)
 
 func process_input():
 	if state in [FALLING]:
@@ -45,17 +53,12 @@ func process_input():
 	if Input.is_action_pressed("move_right"):
 		move_velocity.x += 1
 		
-	if move_velocity.x > 0:
-		facing.x = 1
-	elif move_velocity.x < 0:
-		facing.x = -1
-		
 	if Input.is_action_pressed("primary_action"):
 		if state in [IDLE, WALK]:
 			if primary_action and can_shoot:
 				can_shoot = false
 				$ActionTimer.start()
-				primary_action.use(facing)
+				primary_action.use(facing.normalized())
 				emit_signal("action_used", $Pivot.global_position)
 				_change_state(ACTION)
 			
@@ -95,7 +98,7 @@ func _change_state(new_state):
 		ACTION:
 			$AnimationPlayer.stop()
 			
-			$Tween.interpolate_property(self, 'position', position, position + BUMP_DISTANCE * -facing, BUMP_DURATION, Tween.TRANS_LINEAR, Tween.EASE_IN)
+			$Tween.interpolate_property(self, 'position', position, position + BUMP_DISTANCE * -facing.normalized(), BUMP_DURATION, Tween.TRANS_LINEAR, Tween.EASE_IN)
 			$Tween.interpolate_method(self, '_animate_bump_height', 0, 1, BUMP_DURATION, Tween.TRANS_LINEAR, Tween.EASE_IN)
 			$Tween.start()
 		JUMP:

@@ -29,6 +29,7 @@ _sections_unfolded = [ "Cell", "Visibility", "Z Index" ]
 
 [node name="YSort" type="YSort" parent="." index="1"]
 
+editor/display_folded = true
 sort_enabled = true
 
 [node name="Rock" parent="YSort" index="0" instance=ExtResource( 2 )]
@@ -49,6 +50,8 @@ position = Vector2( 848.366, 103.13 )
 
 [node name="EnemySpawns" type="Node2D" parent="." index="2"]
 
+editor/display_folded = true
+
 [node name="Spawn" type="Position2D" parent="EnemySpawns" index="0"]
 
 position = Vector2( 439.401, 618.97 )
@@ -57,6 +60,8 @@ position = Vector2( 439.401, 618.97 )
 
 position = Vector2( 689.71, 145.56 )
 
-[node name="EnemyHolder" type="Position2D" parent="." index="3"]
+[node name="DoorHolder" type="Position2D" parent="." index="3"]
+
+[node name="EnemyHolder" type="Position2D" parent="." index="4"]
 
 

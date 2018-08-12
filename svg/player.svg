@@ -25,9 +25,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="5.6"
-     inkscape:cx="125.11376"
-     inkscape:cy="449.56639"
+     inkscape:zoom="2.8"
+     inkscape:cx="294.04085"
+     inkscape:cy="450.17486"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -54,17 +54,6 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1">
-    <rect
-       style="fill:#0000ff;fill-opacity:1;fill-rule:nonzero;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none"
-       id="rect3392"
-       width="16.933332"
-       height="33.866665"
-       x="51.917107"
-       y="161.16026"
-       ry="1.8040693"
-       inkscape:export-filename="/home/nforrer/src/ludumdare/ld42/player.png"
-       inkscape:export-xdpi="96.000023"
-       inkscape:export-ydpi="96.000023" />
     <ellipse
        style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none"
        id="path3394"
@@ -93,49 +82,127 @@
        inkscape:export-filename="/home/nforrer/src/ludumdare/ld42/entities/player/hand.png"
        inkscape:export-xdpi="110.46217"
        inkscape:export-ydpi="110.46217" />
-    <g
-       id="g5302"
-       inkscape:export-filename="/home/nforrer/src/ludumdare/ld42/entities/player/head.png"
+    <path
+       style="fill:#ffb380;fill-opacity:1;fill-rule:nonzero;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none"
+       d="m 29.188653,172.40406 c 1.880968,3.30119 -1.06702,3.89216 -4.990375,3.89216 -3.923354,0 -5.832644,-3.08008 -5.832644,-6.87953 0,-3.79945 1.90929,-6.87953 5.832644,-6.87953 1.793907,0 3.177662,1.91546 3.035334,3.56716 -0.07444,0.86398 3.508873,2.53036 2.8072,3.19927 -1.285745,1.2257 -1.444807,2.06034 -0.852159,3.10047 z"
+       id="path5280"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="sssssss"
+       inkscape:export-filename="/home/nforrer/src/ludumdare/ld42/entities/player/player.png"
        inkscape:export-xdpi="110.46217"
-       inkscape:export-ydpi="110.46217">
-      <path
-         inkscape:export-ydpi="110.46217"
-         inkscape:export-xdpi="110.46217"
-         inkscape:export-filename="/home/nforrer/src/ludumdare/ld42/entities/player/player.png"
-         sodipodi:nodetypes="sssssss"
-         inkscape:connector-curvature="0"
-         id="path5280"
-         d="m 29.188653,172.40406 c 1.880968,3.30119 -1.06702,3.89216 -4.990375,3.89216 -3.923354,0 -5.832644,-3.08008 -5.832644,-6.87953 0,-3.79945 1.90929,-6.87953 5.832644,-6.87953 1.793907,0 3.177662,1.91546 3.035334,3.56716 -0.07444,0.86398 3.508873,2.53036 2.8072,3.19927 -1.285745,1.2257 -1.444807,2.06034 -0.852159,3.10047 z"
-         style="fill:#ffb380;fill-opacity:1;fill-rule:nonzero;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none" />
-      <circle
-         inkscape:export-ydpi="110.46217"
-         inkscape:export-xdpi="110.46217"
-         inkscape:export-filename="/home/nforrer/src/ludumdare/ld42/entities/player/player.png"
-         r="0.91415197"
-         cy="166.93205"
-         cx="25.199612"
-         id="path5292"
-         style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none" />
-      <ellipse
-         inkscape:export-ydpi="110.46217"
-         inkscape:export-xdpi="110.46217"
-         inkscape:export-filename="/home/nforrer/src/ludumdare/ld42/entities/player/player.png"
-         ry="0.65523463"
-         rx="0.6635868"
-         style="fill:#f2f2f2;fill-opacity:1;fill-rule:nonzero;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none"
-         id="circle5294"
-         cx="25.349949"
-         cy="167.02393" />
-      <ellipse
-         inkscape:export-ydpi="110.46217"
-         inkscape:export-xdpi="110.46217"
-         inkscape:export-filename="/home/nforrer/src/ludumdare/ld42/entities/player/player.png"
-         ry="1.4699824"
-         rx="1.6370258"
-         cy="173.40454"
-         cx="27.428535"
-         id="path5296"
-         style="fill:#1a1a1a;fill-opacity:1;fill-rule:nonzero;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none" />
-    </g>
+       inkscape:export-ydpi="110.46217" />
+    <circle
+       style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none"
+       id="path5292"
+       cx="25.199612"
+       cy="166.93205"
+       r="0.91415197"
+       inkscape:export-filename="/home/nforrer/src/ludumdare/ld42/entities/player/player.png"
+       inkscape:export-xdpi="110.46217"
+       inkscape:export-ydpi="110.46217" />
+    <ellipse
+       cy="167.02393"
+       cx="25.349949"
+       id="circle5294"
+       style="fill:#f2f2f2;fill-opacity:1;fill-rule:nonzero;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none"
+       rx="0.6635868"
+       ry="0.65523463"
+       inkscape:export-filename="/home/nforrer/src/ludumdare/ld42/entities/player/player.png"
+       inkscape:export-xdpi="110.46217"
+       inkscape:export-ydpi="110.46217" />
+    <ellipse
+       style="fill:#1a1a1a;fill-opacity:1;fill-rule:nonzero;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none"
+       id="path5296"
+       cx="27.428535"
+       cy="173.40454"
+       rx="1.6370258"
+       ry="1.4699824"
+       inkscape:export-filename="/home/nforrer/src/ludumdare/ld42/entities/player/player.png"
+       inkscape:export-xdpi="110.46217"
+       inkscape:export-ydpi="110.46217" />
+    <path
+       inkscape:export-ydpi="110.46217"
+       inkscape:export-xdpi="110.46217"
+       inkscape:export-filename="/home/nforrer/src/ludumdare/ld42/entities/player/body_back.png"
+       sodipodi:nodetypes="sssss"
+       inkscape:connector-curvature="0"
+       id="path2845"
+       d="m 99.286738,184.70261 c 0,3.95321 -1.173086,6.73271 -5.126301,6.73271 -3.953215,0 -5.220799,-3.06297 -5.220796,-7.01619 2e-6,-3.95321 1.267585,-7.29966 5.220796,-7.29966 3.953211,0 5.126301,3.62993 5.126301,7.58314 z"
+       style="fill:#800000;fill-opacity:1;fill-rule:nonzero;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none" />
+    <circle
+       inkscape:export-ydpi="110.46217"
+       inkscape:export-xdpi="110.46217"
+       inkscape:export-filename="/home/nforrer/src/ludumdare/ld42/entities/player/hand.png"
+       r="2.0788691"
+       cy="182.88362"
+       cx="83.081009"
+       id="circle2847"
+       style="fill:#cccccc;fill-opacity:1;fill-rule:nonzero;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none" />
+    <path
+       inkscape:export-ydpi="110.46217"
+       inkscape:export-xdpi="110.46217"
+       inkscape:export-filename="/home/nforrer/src/ludumdare/ld42/entities/player/head_front.png"
+       sodipodi:nodetypes="cscsc"
+       inkscape:connector-curvature="0"
+       id="path2849"
+       d="m 93.955625,175.76168 c -1.053909,0.0169 -3.416138,0.76873 -3.902698,-0.53444 -1.317331,-3.52826 -2.758313,-11.49449 4.233427,-11.61822 6.440996,0.15091 6.130766,8.62611 3.768316,12.02896 -0.702541,1.01193 -3.08871,0.12328 -4.099045,0.1237 z"
+       style="fill:#ffb380;fill-opacity:1;fill-rule:nonzero;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none" />
+    <circle
+       inkscape:export-ydpi="110.46217"
+       inkscape:export-xdpi="110.46217"
+       inkscape:export-filename="/home/nforrer/src/ludumdare/ld42/entities/player/head_front.png"
+       r="0.91415197"
+       cy="167.9787"
+       cx="91.955757"
+       id="circle2867"
+       style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none" />
+    <ellipse
+       inkscape:export-ydpi="110.46217"
+       inkscape:export-xdpi="110.46217"
+       inkscape:export-filename="/home/nforrer/src/ludumdare/ld42/entities/player/head_front.png"
+       ry="0.65523463"
+       rx="0.6635868"
+       style="fill:#f2f2f2;fill-opacity:1;fill-rule:nonzero;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none"
+       id="ellipse2869"
+       cx="92.106094"
+       cy="168.07057" />
+    <circle
+       style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none"
+       id="circle2871"
+       cx="96.160744"
+       cy="167.93146"
+       r="0.91415197"
+       inkscape:export-filename="/home/nforrer/src/ludumdare/ld42/entities/player/head_front.png"
+       inkscape:export-xdpi="110.46217"
+       inkscape:export-ydpi="110.46217" />
+    <ellipse
+       cy="168.07344"
+       cx="96.077225"
+       id="ellipse2873"
+       style="fill:#f2f2f2;fill-opacity:1;fill-rule:nonzero;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none"
+       rx="0.6635868"
+       ry="0.65523463"
+       inkscape:export-filename="/home/nforrer/src/ludumdare/ld42/entities/player/head_front.png"
+       inkscape:export-xdpi="110.46217"
+       inkscape:export-ydpi="110.46217" />
+    <ellipse
+       inkscape:export-ydpi="110.46217"
+       inkscape:export-xdpi="110.46217"
+       inkscape:export-filename="/home/nforrer/src/ludumdare/ld42/entities/player/head_front.png"
+       ry="1.4699824"
+       rx="1.6370258"
+       cy="173.13727"
+       cx="94.245918"
+       id="ellipse2875"
+       style="fill:#1a1a1a;fill-opacity:1;fill-rule:nonzero;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none" />
+    <path
+       style="fill:#ffb380;fill-opacity:1;fill-rule:nonzero;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none"
+       d="m 109.45265,175.76168 c -1.05391,0.0169 -3.41614,0.76873 -3.9027,-0.53444 -1.31733,-3.52826 -2.75831,-11.49449 4.23343,-11.61822 6.44099,0.15091 6.13076,8.62611 3.76831,12.02896 -0.70254,1.01193 -3.08871,0.12328 -4.09904,0.1237 z"
+       id="path2901"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cscsc"
+       inkscape:export-filename="/home/nforrer/src/ludumdare/ld42/entities/player/head_back.png"
+       inkscape:export-xdpi="110.46217"
+       inkscape:export-ydpi="110.46217" />
   </g>
 </svg>
